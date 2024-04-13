@@ -1,0 +1,8 @@
+{
+    "css": [
+        "vendor/open-admin/open-admin.min.css?id=70b9c0f02db63754c914a2300f687107"
+    ],
+    "js": [
+        "vendor/open-admin/open-admin.min.js?id=aba41f8e0c214a92ed04a5698c830083"
+    ]
+}
