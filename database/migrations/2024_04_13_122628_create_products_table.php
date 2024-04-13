@@ -27,6 +27,9 @@ return new class extends Migration
             $table->string('payment_type')->comment('payment_required,free,paid_item');
             $table->json('payment_rules')->nullable();
             $table->json('faq')->nullable();
+            $table->json('meta_tags')->nullable();
+            $table->text('meta_description')->nullable();
+            $table->text('slug');
             $table->timestamps();
         });
     }
