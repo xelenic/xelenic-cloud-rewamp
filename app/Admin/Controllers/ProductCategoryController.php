@@ -71,6 +71,8 @@ class ProductCategoryController extends AdminController
 
         $form->text('product_name', __('Product name'));
         $form->textarea('description', __('Description'));
+//        $form->pagedesigner('description', __('pageDesign'))->snap(30);
+
         $form->tags('meta_tags', __('Meta tags'));
         $form->textarea('meta_description', __('Meta description'));
         $form->select('category_type', __('Category type'))->options([
