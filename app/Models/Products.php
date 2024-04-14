@@ -8,4 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class Products extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+      'faq' => 'json',
+      'payment_rules' => 'json',
+      'meta_tags' => 'json',
+
+    ];
+
+    public function getTagsAttribute($value)
+    {
+        return explode(',', $value);
+    }
+
+    public function setTagsAttribute($value)
+    {
+        $this->attributes['tags'] = implode(',', $value);
+    }
+
 }

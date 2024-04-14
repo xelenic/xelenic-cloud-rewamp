@@ -31,20 +31,6 @@ class ProductsController extends AdminController
         $grid->column('product_name', __('Product name'));
         $grid->column('icon', __('Icon'));
         $grid->column('price', __('Price'));
-        $grid->column('description', __('Description'));
-        $grid->column('short_description', __('Short description'));
-        $grid->column('status', __('Status'));
-        $grid->column('cover_photo', __('Cover photo'));
-        $grid->column('category_id', __('Category id'));
-        $grid->column('is_available_api', __('Is available api'));
-        $grid->column('showing_frontend', __('Showing frontend'));
-        $grid->column('product_type', __('Product type'));
-        $grid->column('payment_type', __('Payment type'));
-        $grid->column('payment_rules', __('Payment rules'));
-        $grid->column('faq', __('Faq'));
-        $grid->column('meta_tags', __('Meta tags'));
-        $grid->column('meta_description', __('Meta description'));
-        $grid->column('slug', __('Slug'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -96,7 +82,7 @@ class ProductsController extends AdminController
 
         $form->tab('General', function ($form) {
             $form->text('product_name', __('Product name'));
-            $categories = ProductCategory::all()->pluck('name','id');
+            $categories = ProductCategory::all()->pluck('product_name','id');
             $form->select('category_id', __('Category id'))->options($categories);
             $form->text('slug', __('Slug'));
             $form->switch('is_available_api', __('Is available api'));
@@ -138,15 +124,6 @@ class ProductsController extends AdminController
                 $table->tags('meta');
             });
         });
-
-
-
-
-
-
-
-
-
         return $form;
     }
 }
