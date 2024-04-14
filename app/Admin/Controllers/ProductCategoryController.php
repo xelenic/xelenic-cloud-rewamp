@@ -69,11 +69,14 @@ class ProductCategoryController extends AdminController
     {
         $form = new Form(new ProductCategory());
 
-        $form->textarea('product_name', __('Product name'));
+        $form->text('product_name', __('Product name'));
         $form->textarea('description', __('Description'));
-        $form->textarea('meta_tags', __('Meta tags'));
+        $form->tags('meta_tags', __('Meta tags'));
         $form->textarea('meta_description', __('Meta description'));
-        $form->textarea('category_type', __('Category type'));
+        $form->select('category_type', __('Category type'))->options([
+            'service' => 'Service Categories',
+            'product' => 'Product Categories'
+        ]);
 
         return $form;
     }
