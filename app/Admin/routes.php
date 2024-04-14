@@ -14,4 +14,5 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('products', \App\Admin\Controllers\ProductsController::class);
     $router->resource('product-categories', \App\Admin\Controllers\ProductCategoryController::class);
+    $router->resource('projects', ProjectsController::class);
 });
