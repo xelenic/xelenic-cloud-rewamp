@@ -88,7 +88,7 @@ class ProductsController extends AdminController
             $form->switch('is_available_api', __('Is available api'));
             $form->switch('showing_frontend', __('Showing frontend'));
             $form->select('product_type', __('Product type'))->options(config('products.product_type'));
-            $form->text('cover_photo', __('Cover photo'));
+            $form->file('cover_photo', __('Cover photo'));
             $form->select('status', __('Status'))->options([
                 'active' => 'Active',
                 'inactive' => 'Inactive'
