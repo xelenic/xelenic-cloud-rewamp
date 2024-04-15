@@ -22618,12 +22618,12 @@ main#main footer.fixed-bottom {
 
 .custom-menu>ul>li {
     border-left: 3px solid #fff0;
-    background: #f3f3f3;
+    background: #fbfbfb;
 }
 
 .custom-menu>ul>li.active {
     border-left: 3px solid var(--bs-primary);
-    background-color: #fbfbfb;
+    background-color: #ededed66;
 }
 
 .custom-menu a:active,.custom-menu a:focus,.custom-menu li>ul>li.active a {
