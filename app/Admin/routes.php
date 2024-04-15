@@ -22,4 +22,5 @@ Route::group([
     $router->resource('page-designer-texts', PageDesignerTextController::class);
     $router->resource('page-designer-inline-galleries', PageDesignerInlineGalleryController::class);
     $router->resource('page-designer-embeds', PageDesignerEmbedController::class);
+    $router->resource('payment-histories', PaymentHistoryController::class);
 });
