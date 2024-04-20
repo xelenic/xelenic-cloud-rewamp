@@ -33,7 +33,7 @@
                     Partnership
                 </ul>
                 <ul class="nav navbar-nav hidden-sm visible-lg-block">
-                    Wiki
+                    About
                 </ul>
             </div>
         </header>
