@@ -8622,7 +8622,8 @@ textarea.form-control-lg {
     flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
-    list-style: none
+    list-style: none;
+    margin-left: 50px;
 }
 
 .navbar-nav .nav-link {
@@ -22388,7 +22389,7 @@ body label {
 }
 
 .custom-navbar .valign-header>*,.custom-navbar .navbar-brand,.custom-navbar .header-items>.nav {
-    line-height: 56px
+    line-height: 56px;
 }
 
 .custom-navbar ul.user-menu {

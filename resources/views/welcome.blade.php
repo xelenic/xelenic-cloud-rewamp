@@ -18,8 +18,22 @@
             </a>
             <div class="d-flex flex-fill flex-wrap header-items">
                 <ul class="nav navbar-nav hidden-sm visible-lg-block">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Solutions</a>
+                    Home
+                </ul>
+                <ul class="nav navbar-nav hidden-sm visible-lg-block">
+                    Products
+                </ul>
+                <ul class="nav navbar-nav hidden-sm visible-lg-block">
+                    Services
+                </ul>
+                <ul class="nav navbar-nav hidden-sm visible-lg-block">
+                    Solutions
+                </ul>
+                <ul class="nav navbar-nav hidden-sm visible-lg-block">
+                    Partnership
+                </ul>
+                <ul class="nav navbar-nav hidden-sm visible-lg-block">
+                    Wiki
                 </ul>
             </div>
         </header>
