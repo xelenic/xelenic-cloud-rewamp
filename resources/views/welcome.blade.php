@@ -20,45 +20,6 @@
                 <ul class="nav navbar-nav hidden-sm visible-lg-block">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Solutions</a>
-                        <div class="dropdown-menu mega-menu" aria-labelledby="solutionsDropdown">
-                            <div class="container-md">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <h5>Product 1</h5>
-                                        <ul class="list-unstyled mb-0">
-                                            <li><a href="#">Feature 1</a></li>
-                                            <li><a href="#">Feature 2</a></li>
-                                            <li><a href="#">Feature 3</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h5>Product 2</h5>
-                                        <ul class="list-unstyled mb-0">
-                                            <li><a href="#">Feature 1</a></li>
-                                            <li><a href="#">Feature 2</a></li>
-                                            <li><a href="#">Feature 3</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h5>Product 3</h5>
-                                        <ul class="list-unstyled mb-0">
-                                            <li><a href="#">Feature 1</a></li>
-                                            <li><a href="#">Feature 2</a></li>
-                                            <li><a href="#">Feature 3</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <h5>Product 4</h5>
-                                        <ul class="list-unstyled mb-0">
-                                            <li><a href="#">Feature 1</a></li>
-                                            <li><a href="#">Feature 2</a></li>
-                                            <li><a href="#">Feature 3</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
                 </ul>
             </div>
         </header>
