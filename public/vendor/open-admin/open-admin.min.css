@@ -4626,7 +4626,7 @@ span.flatpickr-day.today,span.flatpickr-day.prevMonthDay.today,span.flatpickr-da
 }
 
 *,*::before,*::after {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 :root {
@@ -4737,12 +4737,12 @@ address {
 }
 
 ol,ul {
-    padding-left: 2rem
+    padding-left: 2rem;
 }
 
 ol,ul,dl {
     margin-top: 0;
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
 }
 
 ol ol,ul ul,ol ul,ul ol {
@@ -8077,7 +8077,9 @@ textarea.form-control-lg {
     border-top: .3em solid;
     border-right: .3em solid #fff0;
     border-bottom: 0;
-    border-left: .3em solid #fff0
+    border-left: .3em solid #fff0;
+    margin-top: 9px;
+    margin-left: 10px;
 }
 
 .dropdown-toggle:empty::after {
@@ -8098,13 +8100,15 @@ textarea.form-control-lg {
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid rgb(0 0 0 / .15);
-    border-radius: .25rem
+    border-radius: .25rem;
+    width: -webkit-fill-available;
+    padding: 20px;
 }
 
 .dropdown-menu[data-bs-popper] {
     top: 100%;
     left: 0;
-    margin-top: .125rem
+    margin-top: .125rem;
 }
 
 .dropdown-menu-start {
@@ -8350,7 +8354,7 @@ textarea.form-control-lg {
 }
 
 .dropdown-menu.show {
-    display: block
+    display: block;
 }
 
 .dropdown-header {
@@ -8619,7 +8623,7 @@ textarea.form-control-lg {
 
 .navbar-nav {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
@@ -11512,7 +11516,7 @@ textarea.form-control-lg {
 }
 
 .d-flex {
-    display: flex!important
+    display: flex!important;
 }
 
 .d-inline-flex {
@@ -11780,7 +11784,7 @@ textarea.form-control-lg {
 }
 
 .flex-fill {
-    flex: 1 1 auto!important
+    flex: 1 1 auto!important;
 }
 
 .flex-row {
@@ -11816,7 +11820,7 @@ textarea.form-control-lg {
 }
 
 .flex-wrap {
-    flex-wrap: wrap!important
+    flex-wrap: wrap!important;
 }
 
 .flex-nowrap {
@@ -16243,7 +16247,7 @@ body {
     min-height: 100%;
     height: 100%;
     font-family: "Open Sans",sans-serif!important;
-    background-color: var(--main-bg)
+    background-color: var(--main-bg);
 }
 
 body label {
@@ -23022,8 +23026,8 @@ main#main footer .pagination {
 }
 
 .btn-group>.dropdown-toggle,.btn-group>.btn-group.dropdown-toggle {
-    border-left: 1px solid rgb(255 255 255 / .2);
-    min-width: 2.2em
+    /* border-left: 1px solid rgb(255 255 255 / .2); */
+    min-width: 2.2em;
 }
 
 .show-value {
