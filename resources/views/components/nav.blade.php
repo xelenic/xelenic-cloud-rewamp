@@ -4,9 +4,12 @@
                 <span class="short"><b>Xe</b></span><span class="long"><b>Xelenic</b> Cloud</span>
             </a>
             <div class="d-flex flex-fill flex-wrap header-items">
+
                 <ul class="nav navbar-nav hidden-sm visible-lg-block">
-                    Home
+                    <a style="color: white;font-style: normal;text-decoration: unset;" href="{{route('home')}}">Home</a>
                 </ul>
+
+
 
 
                 <ul class="nav navbar-nav hidden-sm visible-lg-block" id="products" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
@@ -120,8 +123,13 @@
                             </div>
                         </div>
                     </div>
-
                 </ul>
+
+
+                <ul class="nav navbar-nav hidden-sm visible-lg-block">
+                    <a class="btn btn-dark" href="{{route('register')}}" style="height: 34px;margin-top: 11px;background: #7218a1;border: #00a65a;">Get Started</a>
+                </ul>
+
 
 
 
