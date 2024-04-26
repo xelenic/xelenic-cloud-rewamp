@@ -24,7 +24,6 @@ OpenAdmin\Admin\Form::forget(['editor']);
 Admin::navbar(function (\OpenAdmin\Admin\Widgets\Navbar $navbar) {
 
     $navbar->left('Overview');
-    $navbar->left('Cloud Solutions');
 
     // adds ajax refresh button
     $navbar->right(new OpenAdmin\Admin\Widgets\Navbar\RefreshButton());
