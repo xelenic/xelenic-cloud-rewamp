@@ -67,7 +67,7 @@
                 </ul>
 
                 <ul class="nav navbar-nav hidden-sm visible-lg-block" id="support" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                    Support
+                    Community
                 </ul>
                 <ul class="dropdown-menu dropdown-menu-hover" aria-labelledby="support">
                     <div class="container">
