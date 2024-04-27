@@ -13,7 +13,7 @@
 
 
                 <ul class="nav navbar-nav hidden-sm visible-lg-block" id="products" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                    Products
+                    <button style="background-color: rgba(0, 0, 255, 0); border: none; color: white; ">Products</button>
                 </ul>
                 <ul class="dropdown-menu dropdown-menu-hover" aria-labelledby="products">
                     <div class="container">
@@ -29,7 +29,7 @@
                             <div class="col-md-6" style="border-style: solid;border-bottom: none;border-right: none;border-top: none;border-width: 1px;border-color: #e7e7e7;">
                                 <li>
                                     <a class="dropdown-item" href="#" style="white-space: inherit !important;color: #797979;">
-                                            <h2 style="font-size: 26px;">Why use Xelenic Cloud</h2>
+                                            <h2 style="font-size: 26px;">Authentication API</h2>
                                             <p>Top Reason business choose us</p>
                                     </a>
                                 </li>

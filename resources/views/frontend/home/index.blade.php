@@ -1,9 +1,9 @@
 <!-- index.blade.php -->
-@extends('layouts.xelanic')
+@extends('frontend.layouts.xelanic')
 
 @section('content')
 
-    @include('components.home_page.homepage_header')
+    @include('frontend.components.home_page.homepage_header')
 
 
 
