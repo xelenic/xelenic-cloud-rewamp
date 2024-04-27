@@ -15,7 +15,7 @@ class AuthController extends Controller
 {
     public function register()
     {
-        return view('frontend.auth.register');
+        return view('frontend.pages.auth.register');
     }
 
     public function login()
@@ -24,7 +24,7 @@ class AuthController extends Controller
             return redirect($this->redirectPath());
         }
 
-        return view('frontend.auth.login');
+        return view('frontend.pages.auth.login');
     }
 
     public function register_post(Request $request)
