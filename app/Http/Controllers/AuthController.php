@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use OpenAdmin\Admin\Auth\Database\Administrator;
 use OpenAdmin\Admin\Auth\Database\Role;
+use OpenAdmin\Admin\Facades\Admin;
 
 class AuthController extends Controller
 {
@@ -19,6 +20,10 @@ class AuthController extends Controller
 
     public function login()
     {
+        if ($this->guard()->check()) {
+            return redirect($this->redirectPath());
+        }
+
         return view('frontend.auth.login');
     }
 
@@ -47,6 +52,21 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
 
+
         return redirect()->intended($this->redirectPath());
+    }
+
+    protected function guard()
+    {
+        return Admin::guard();
+    }
+
+    protected function redirectPath()
+    {
+        if (method_exists($this, 'redirectTo')) {
+            return $this->redirectTo();
+        }
+
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : config('admin.route.prefix');
     }
 }
