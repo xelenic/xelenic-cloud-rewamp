@@ -8,10 +8,11 @@
 
     <!-- Include the style -->
     @include('frontend.partials.styles')
+    @include('frontend.partials.nav')
+
 </head>
 
 <body class="antialiased">
-@include('frontend.partials.nav')
 
 
 

@@ -3,7 +3,7 @@
 <link href="{{ url('vendor/open-admin/open-admin.min.css?id=70b9c0f02db63754c914a2300f687107') }}" rel="stylesheet">
 <link href="{{ url('home_page/style.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="public/frontend/assets/css/styles.css">
-<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>
+{{--<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css'>--}}
 
 
 <style>
