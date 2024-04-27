@@ -37,29 +37,38 @@
 
                     <div class="container">
                         <form method="POST" action="http://localhost:8000/register">
+                            @if ($errors->any())
+                                <div class="alert alert-danger" style="/* height: 50px; */margin-top: 20px;background: #dc3545;color: white;font-size: 14px;margin-bottom: 20px;padding-bottom: unset;">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             @csrf
                             <div>
-                                <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                                <label style="text-align: left !important;" for="name" class="col-md-4 col-form-label text-md-right">Name</label>
                                 <input type="text" name="name" class="form-control">
                             </div>
                             <div>
-                                <label for="name" class="col-md-4 col-form-label text-md-right">Email</label>
-                                <input type="text" name="name" class="form-control">
+                                <label style="text-align: left !important;" for="name" class="col-md-4 col-form-label text-md-right">Email</label>
+                                <input type="email" name="email" class="form-control">
                             </div>
                             <div>
-                                <label for="name" class="col-md-4 col-form-label text-md-right">Username</label>
-                                <input type="text" name="name" class="form-control">
+                                <label style="text-align: left !important;" for="name" class="col-md-4 col-form-label text-md-right">Username</label>
+                                <input type="text" name="username" class="form-control">
                             </div>
                             <div>
-                                <label for="name" class="col-md-4 col-form-label text-md-right">Password</label>
-                                <input type="text" name="name" class="form-control">
+                                <label style="text-align: left !important;" for="name" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <input type="password" name="password" class="form-control">
                             </div>
                             <div style="margin-top: 10px">
-                                <input type="checkbox" name="">
+                                <input style="text-align: left !important;" type="checkbox" name="email_news_letters">
                                 <label for="">Receive occasional product updates and announcements.</label>
                             </div>
                             <div style="margin-top: 10px">
-                                <input type="checkbox" name="">
+                                <input style="text-align: left !important;" type="checkbox" name="agreement">
                                 <label for="">Agree our <a href="#">license and polices</a> </label>
                             </div>
 

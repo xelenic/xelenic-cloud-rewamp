@@ -21,6 +21,8 @@ use App\Http\Controllers\AuthController;
 //Start of frontend routes
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
 Route::get('register', [AuthController::class, 'register'])->name('register');
 Route::post('register', [AuthController::class, 'register_post'])->name('register.post');
 
