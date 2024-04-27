@@ -1,5 +1,5 @@
 <!-- index.blade.php -->
-@extends('layouts.xelanic')
+@extends('frontend.layouts.xelenic')
 
 @section('content')
     <div class="container">
