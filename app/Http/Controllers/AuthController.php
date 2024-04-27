@@ -38,12 +38,15 @@ class AuthController extends Controller
             ]
         );
 
-        $adminroleUser = new AdminRoleUser();
+        $adminroleUser = new AdminRoleUser;
         $adminroleUser->user_id = $user->id;
         $adminroleUser->role_id = 2;
         $adminroleUser->save();
 
+        admin_toastr(trans('admin.login_successful'));
 
-        return redirect()->route('success')->with('success', 'Registration successful!');
+        $request->session()->regenerate();
+
+        return redirect()->intended($this->redirectPath());
     }
 }
