@@ -28,9 +28,9 @@
                             </div>
                             <div class="col-md-6" style="border-style: solid;border-bottom: none;border-right: none;border-top: none;border-width: 1px;border-color: #e7e7e7;">
                                 <li>
-                                    <a class="dropdown-item" href="#" style="white-space: inherit !important;color: #797979;">
-                                            <h2 style="font-size: 26px;">Authentication API</h2>
-                                            <p>Top Reason business choose us</p>
+                                    <a class="dropdown-item" href="/xelauth" style="white-space: inherit !important;color: #797979;">
+                                            <h2 style="font-size: 26px;">XelAuth</h2>
+                                            <p>Authentication API by Xelenic</p>
                                     </a>
                                 </li>
                                 <li>
