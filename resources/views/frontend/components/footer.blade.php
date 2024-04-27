@@ -1,5 +1,4 @@
 <style>
-    body{margin-top:20px;}
     .site-footer {
         padding-top: 72px;
         background-color: #374250;
