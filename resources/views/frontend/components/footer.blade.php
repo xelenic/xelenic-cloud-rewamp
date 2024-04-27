@@ -172,7 +172,7 @@
     }
 
 </style>
-<footer class="site-footer">
+<footer class="site-footer mt-4">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6">
