@@ -17,6 +17,14 @@ use App\Http\Controllers\AuthController;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+
+//Start of frontend routes
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('register', [AuthController::class, 'register'])->name('register');
+
+// products
+Route::get('/xelauth', [HomeController::class, 'xelauth'])->name('xelauth');
+
+//End of frontend routes
 

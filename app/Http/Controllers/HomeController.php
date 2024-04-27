@@ -10,4 +10,9 @@ class Homecontroller extends Controller
     {
         return view('frontend.home.index');
     }
+
+    public function xelauth()
+    {
+        return view('frontend.pages.products.xelauth');
+    }
 }
