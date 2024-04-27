@@ -1,5 +1,5 @@
 <!-- index.blade.php -->
-@extends('frontend.layouts.xelenic')
+@extends('frontend.layouts.xelanic')
 
 @section('content')
     <div class="container">
@@ -77,12 +77,8 @@
                             </div>
                         </form>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
-
     </div>
 @endsection

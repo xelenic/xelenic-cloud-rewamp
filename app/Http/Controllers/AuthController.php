@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdminRoleUser;
+use App\Rules\CheckUserExistingCreate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -24,10 +25,8 @@ class AuthController extends Controller
     public function register_post(Request $request)
     {
         $validatedData = $request->validate([
-            'username' => 'required|min:3 | new',
+            'username' => ['required','min:3',new CheckUserExistingCreate()],
             'password' => 'required|min:6',
-            'receive_email' => 'boolean',
-            'agree_license' => 'accepted',
         ]);
 
         $user = Administrator::create(
