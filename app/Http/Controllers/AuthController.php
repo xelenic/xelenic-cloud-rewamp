@@ -28,6 +28,15 @@ class AuthController extends Controller
         return view('frontend.pages.auth.login');
     }
 
+    public function login_post()
+    {
+        if ($this->guard()->check()) {
+            return redirect($this->redirectPath());
+        }
+
+        return view('frontend.pages.auth.login');
+    }
+
     public function register_post(Request $request)
     {
         $validatedData = $request->validate([
@@ -73,6 +82,15 @@ class AuthController extends Controller
         $request->session()->regenerate();
 
         return redirect()->intended($this->redirectPath());
+    }
+
+    public function getLogin()
+    {
+        if ($this->guard()->check()) {
+            return redirect($this->redirectPath());
+        }
+
+        return view('frontend.pages.auth.login');
     }
 
     protected function guard()

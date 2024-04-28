@@ -19,7 +19,7 @@ class HomeController extends Controller
         return $content
             ->title(__('Xelenic Cloud'))
             ->description('Hi '. auth()->user()->name)
-            ->view('dashboard.dashboard',[
+            ->view('backend.dashboard.dashboard',[
                 'product_list' => $products
             ]);
     }
