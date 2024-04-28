@@ -7,6 +7,7 @@ use App\Rules\CheckUserExistingCreate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\RateLimiter;
 use OpenAdmin\Admin\Auth\Database\Administrator;
 use OpenAdmin\Admin\Auth\Database\Role;
 use OpenAdmin\Admin\Facades\Admin;
@@ -49,9 +50,27 @@ class AuthController extends Controller
         $adminroleUser->save();
 
         admin_toastr(trans('admin.login_successful'));
+        $rate_limit_key = 'login-tries-'.Admin::guardName();
+
+        $credentials = $request->only(['username', 'password']);
+        $remember    = $request->get('remember', false);
+
+        if ($this->guard()->attempt($credentials, $remember)) {
+            RateLimiter::clear($rate_limit_key);
+
+            return $this->sendLoginResponse($request);
+        }
+
+
+
+        return redirect()->intended($this->redirectPath());
+    }
+
+    protected function sendLoginResponse(Request $request)
+    {
+        admin_toastr(trans('admin.login_successful'));
 
         $request->session()->regenerate();
-
 
         return redirect()->intended($this->redirectPath());
     }
