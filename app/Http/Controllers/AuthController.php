@@ -7,7 +7,9 @@ use App\Rules\CheckUserExistingCreate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Validator;
 use OpenAdmin\Admin\Auth\Database\Administrator;
 use OpenAdmin\Admin\Auth\Database\Role;
 use OpenAdmin\Admin\Facades\Admin;
@@ -28,13 +30,58 @@ class AuthController extends Controller
         return view('frontend.pages.auth.login');
     }
 
-    public function login_post()
+    protected function loginValidator(array $data)
     {
-        if ($this->guard()->check()) {
-            return redirect($this->redirectPath());
+        return Validator::make($data, [
+            $this->username() => 'required',
+            'password'        => 'required',
+        ]);
+    }
+
+    protected function username()
+    {
+        return 'username';
+    }
+
+    public function postLogin(Request $request)
+    {
+        $rate_limit_key = 'login-tries-'.Admin::guardName();
+
+        $this->loginValidator($request->all())->validate();
+
+        $credentials = $request->only([$this->username(), 'password']);
+        $remember    = $request->get('remember', false);
+
+        if ($this->guard()->attempt($credentials, $remember)) {
+            RateLimiter::clear($rate_limit_key);
+
+            return $this->sendLoginResponse($request);
         }
 
-        return view('frontend.pages.auth.login');
+        if (config('admin.auth.throttle_logins')) {
+            $throttle_timeout = config('admin.auth.throttle_timeout', 600);
+            RateLimiter::hit($rate_limit_key, $throttle_timeout);
+        }
+
+        return back()->withInput()->withErrors([
+            $this->username() => $this->getFailedLoginMessage(),
+        ]);
+    }
+
+    protected function getFailedLoginMessage()
+    {
+        return Lang::has('auth.failed')
+            ? trans('auth.failed')
+            : 'These credentials do not match our records.';
+    }
+
+    public function getLogout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return redirect(config('admin.route.prefix'));
     }
 
     public function register_post(Request $request)

@@ -27,7 +27,7 @@ Route::get('register', [AuthController::class, 'register'])->name('register');
 Route::post('register', [AuthController::class, 'register_post'])->name('register.post');
 
 Route::get('login', [AuthController::class, 'login'])->name('login');
-Route::post('login', [AuthController::class, 'login_post'])->name('login.post');
+Route::post('login', [AuthController::class, 'postLogin'])->name('login.post');
 
 // products
 Route::get('/xelauth', [HomeController::class, 'xelauth'])->name('xelauth');
