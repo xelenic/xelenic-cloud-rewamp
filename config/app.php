@@ -169,6 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         TeamTeaTime\Forum\ForumServiceProvider::class,
+        App\Providers\ViewComposerServiceProvider::class,
     ])->toArray(),
 
     /*

@@ -23,41 +23,15 @@
                         </div>
                     </div>
                     <div class="col-md-6" style="border-style: solid;border-bottom: none;border-right: none;border-top: none;border-width: 1px;border-color: #e7e7e7;">
-                        <li>
-                            <a class="dropdown-item" href="/xelauth" style="white-space: inherit !important;color: #797979;">
-                                    <h2 style="font-size: 26px;">XelAuth</h2>
-                                    <p>Authentication API by Xelenic</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#" style="white-space: inherit !important;color: #797979;">
-                                <h2 style="font-size: 26px;">Research and Development</h2>
-                                <p>Whether your business is early in its journey or well on its way to
-                                    digital transformation, Google Cloud can help solve your toughest challenges.</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#" style="white-space: inherit !important;color: #797979;">
-                                <h2 style="font-size: 26px;">Multi Cloud Handler</h2>
-                                <p>Whether your business is early in its journey or well on its way to
-                                    digital transformation, Google Cloud can help solve your toughest challenges.</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#" style="white-space: inherit !important;color: #797979;">
-                                <h2 style="font-size: 26px;">High Secure Cloud</h2>
-                                <p>Whether your business is early in its journey or well on its way to
-                                    digital transformation, Google Cloud can help solve your toughest challenges.</p>
-                            </a>
-                        </li>
 
-                        <li>
-                            <a class="dropdown-item" href="#" style="white-space: inherit !important;color: #797979;">
-                                <h2 style="font-size: 26px;">Student Packages</h2>
-                                <p>Whether your business is early in its journey or well on its way to
-                                    digital transformation, Google Cloud can help solve your toughest challenges.</p>
-                            </a>
-                        </li>
+                        @foreach($frontend_enabled_product_list as $product)
+                            <li>
+                                <a class="dropdown-item" href="/xelauth" style="white-space: inherit !important;color: #797979;">
+                                    <h2 style="font-size: 26px;">{{$product->product_name}}</h2>
+                                    <p>{{$product->short_description}}</p>
+                                </a>
+                            </li>
+                        @endforeach
 
                     </div>
                 </div>
