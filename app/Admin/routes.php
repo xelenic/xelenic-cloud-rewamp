@@ -24,4 +24,5 @@ Route::group([
     $router->resource('page-designer-embeds', PageDesignerEmbedController::class);
     $router->resource('payment-histories', PaymentHistoryController::class);
     $router->resource('server-religions', ServerReligionController::class);
+    $router->resource('blogs', BlogController::class);
 });
