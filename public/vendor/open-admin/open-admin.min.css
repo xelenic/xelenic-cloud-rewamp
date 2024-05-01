@@ -22509,7 +22509,7 @@ body label {
 }
 
 .user-menu.show {
-    background: #f8f8f8
+    background: #3a96ff;
 }
 
 .navbar-brand,.menu-width {
@@ -22959,8 +22959,8 @@ main#main footer .pagination {
 }
 
 .user-menu .user-header {
-    background: var(--menu-bg);
-    color: var(--menu-text)
+    background: #ffffff;
+    color: #616161;
 }
 
 .form-horizontal .row {

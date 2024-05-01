@@ -89,14 +89,46 @@
                                     digital transformation, Google Cloud can help solve your toughest challenges.</p>
                             </a>
                         </li>
-
-                        <li>
-                            <a class="btn btn-dark" href="{{route('register')}}" style="height: 34px;margin-top: 11px;background: #7218a1;border: #00a65a;">Get Started</a>
-                        </li>
-
                     </div>
                 </div>
             </div>
         </ul>
+
+
+        @if(auth()->check() == false)
+            @if(Admin::user())
+                <ul class="nav ms-auto d-flex align-items-center">
+                    <li class="nav-item">
+                        <a href="{{url('dashboard')}}">
+                            <div class="user-menu d-flex align-items-center px-3" href="#">
+                                <span class="bg-light inline rounded-circle user-image"><img src="{{url('vendor/open-admin/open-admin/gfx/user.svg')}}" alt="User Image"></span>
+                                <span class="hidden-xs">{{Admin::user()->name}}</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            @else
+                <ul class="nav navbar-nav hidden-sm visible-lg-block">
+                    <a class="btn btn-dark" href="{{route('register')}}" style="height: 34px;margin-top: 11px;background: #7218a1;border: #00a65a;">Get Started</a>
+                </ul>
+            @endif
+
+        @else
+            <ul class="nav order-2 ms-auto d-flex align-items-center">
+                <li class="nav-item">
+                    <a href="sjkdhakjsdhas">
+                        <div class="user-menu d-flex align-items-center px-3" href="#">
+                        <span class="bg-light inline rounded-circle user-image">
+                            <img src="{{url('vendor/open-admin/open-admin/gfx/user.svg')}}" alt="User Image">
+                        </span>
+                            <span class="hidden-xs">{{Admin::user()->name}}</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        @endif
+
     </div>
 </header>
+
+
