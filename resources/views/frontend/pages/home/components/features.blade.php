@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 <section class="py-5 border-bottom" id="features" style="background-color: white">
     <div class="container px-5 my-5">
         <div class="row gx-5">
