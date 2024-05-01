@@ -9,35 +9,38 @@
             <a style="color: white;font-style: normal;text-decoration: unset;" href="{{route('home')}}">Home</a>
         </ul>
 
-        <ul class="nav navbar-nav hidden-sm visible-lg-block" id="products" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+        @if($frontend_enabled_product_list->count() > 0)
+            <ul class="nav navbar-nav hidden-sm visible-lg-block" id="products" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
             <button style="background-color: rgba(0, 0, 255, 0); border: none; color: white; ">Products</button>
-        </ul>
-        <ul class="dropdown-menu dropdown-menu-hover" aria-labelledby="products">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div style="padding: 20px;margin-top: 10%;margin-bottom: 20%;">
-                            <h2 style="margin-bottom: 30px;font-size: 30px">Accelerate your digital transformation</h2>
-                            <p style="font-size: 20px">Whether your business is early in its journey or well on its way to digital transformation,
-                                Google Cloud can help solve your toughest challenges.</p>
+            </ul>
+            <ul class="dropdown-menu dropdown-menu-hover" aria-labelledby="products">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div style="padding: 20px;margin-top: 10%;margin-bottom: 20%;">
+                                <h2 style="margin-bottom: 30px;font-size: 30px">Accelerate your digital transformation</h2>
+                                <p style="font-size: 20px">Whether your business is early in its journey or well on its way to digital transformation,
+                                    Google Cloud can help solve your toughest challenges.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="border-style: solid;border-bottom: none;border-right: none;border-top: none;border-width: 1px;border-color: #e7e7e7;">
+
+                            @foreach($frontend_enabled_product_list as $product)
+                                <li>
+                                    <a class="dropdown-item" href="{{url($product->slug)}}" style="white-space: inherit !important;color: #797979;">
+                                        <h2 style="font-size: 26px;">{{$product->product_name}}</h2>
+                                        <p>{{$product->short_description}}</p>
+                                    </a>
+                                </li>
+                            @endforeach
+
                         </div>
                     </div>
-                    <div class="col-md-6" style="border-style: solid;border-bottom: none;border-right: none;border-top: none;border-width: 1px;border-color: #e7e7e7;">
-
-                        @foreach($frontend_enabled_product_list as $product)
-                            <li>
-                                <a class="dropdown-item" href="/xelauth" style="white-space: inherit !important;color: #797979;">
-                                    <h2 style="font-size: 26px;">{{$product->product_name}}</h2>
-                                    <p>{{$product->short_description}}</p>
-                                </a>
-                            </li>
-                        @endforeach
-
-                    </div>
                 </div>
-            </div>
 
-        </ul>
+            </ul>
+        @endif
+
 
         <ul class="nav navbar-nav hidden-sm visible-lg-block" id="support" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
             Community
