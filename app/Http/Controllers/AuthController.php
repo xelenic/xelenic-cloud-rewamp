@@ -18,6 +18,9 @@ class AuthController extends Controller
 {
     public function register()
     {
+        if ($this->guard()->check()) {
+            return redirect($this->redirectPath());
+        }
         return view('frontend.pages.auth.register');
     }
 
@@ -90,6 +93,7 @@ class AuthController extends Controller
             'username' => ['required','min:3',new CheckUserExistingCreate()],
             'password' => 'required|min:6',
         ]);
+
 
         $user = Administrator::create(
             [
