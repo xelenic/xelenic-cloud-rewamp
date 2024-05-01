@@ -37,7 +37,6 @@
                         </div>
                     </div>
                 </div>
-
             </ul>
         @endif
 
@@ -91,13 +90,13 @@
                             </a>
                         </li>
 
+                        <li>
+                            <a class="btn btn-dark" href="{{route('register')}}" style="height: 34px;margin-top: 11px;background: #7218a1;border: #00a65a;">Get Started</a>
+                        </li>
+
                     </div>
                 </div>
             </div>
-        </ul>
-
-        <ul class="nav navbar-nav hidden-sm visible-lg-block">
-            <a class="btn btn-dark" href="{{route('register')}}" style="height: 34px;margin-top: 11px;background: #7218a1;border: #00a65a;">Get Started</a>
         </ul>
     </div>
 </header>
