@@ -4,5 +4,6 @@
 @section('content')
 
     @include('frontend.pages.home.components.hero')
+    @include('frontend.pages.home.components.features')
 
 @endsection

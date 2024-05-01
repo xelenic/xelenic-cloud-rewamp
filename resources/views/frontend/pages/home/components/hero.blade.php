@@ -1,7 +1,7 @@
 <!-- Cloud wave -->
 <div class="header">
     <!--Content before waves-->
-    <div class="inner-header flex">
+    <div class="inner-header flex" style="height: 200px;">
         <!--Just the logo.. Don't mind this-->
         <h1>Xelenic Cloud</h1>
     </div>
