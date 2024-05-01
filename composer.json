@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.8",
         "matthiasmullie/minify": "^1.3",
         "open-admin-ext/ckeditor": "^1.0",
+        "open-admin-ext/config": "^1.0",
         "open-admin-ext/page-designer": "^1.0",
         "open-admin-org/open-admin": "^1.0",
         "riari/laravel-forum": "^5.6",
