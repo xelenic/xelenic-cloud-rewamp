@@ -35,7 +35,7 @@
                     <!-- Title and inputs -->
                     <div class="col-md-6">
                         <!-- Title -->
-                        <h3 class="text-white" style="text-align: left">Let's talk about your digital agency goals</h3>
+                        <h3 class="text-white" style="text-align: left">Let's talk about your digital cloud solution</h3>
 
                         <!-- Search -->
                         <form class="col-md-10 bg-body rounded-2 p-2 mt-4">
@@ -48,8 +48,8 @@
 
                     <!-- Content -->
                     <div class="col-md-6" style="">
-                        <h1 style="text-align: left">Xelenic Cloud</h1>
-                        <p style="color: white;text-align: left">Whether your business is early in its journey or well on its way to digital transformation, Google Cloud can help solve your toughest challenges.</p>
+                        <h1 style="text-align: left">{{__('Xelenic Cloud')}}</h1>
+                        <p style="color: white;text-align: left">{{__('Welcome to Xelenic, your ultimate cloud service platform for seamless website hosting. With Xelenic, experience serverless, scalable, and uninterrupted operations with our 0 downtime guarantee.')}}</p>
 
                     </div>
                 </div> <!-- Row END -->

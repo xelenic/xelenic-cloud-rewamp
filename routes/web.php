@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductPageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,7 +31,7 @@ Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'postLogin'])->name('login.post');
 
 // products
-Route::get('/xelauth', [HomeController::class, 'xelauth'])->name('xelauth');
+Route::get('/products/{slug}', [ProductPageController::class, 'show'])->name('product.show');
 
 //End of frontend routes
 

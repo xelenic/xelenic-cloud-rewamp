@@ -27,9 +27,16 @@
 
                             @foreach($frontend_enabled_product_list as $product)
                                 <li>
-                                    <a class="dropdown-item" href="{{url($product->slug)}}" style="white-space: inherit !important;color: #797979;">
-                                        <h2 style="font-size: 26px;">{{$product->product_name}}</h2>
-                                        <p>{{$product->short_description}}</p>
+                                    <a class="dropdown-item" href="{{url('products/'.$product->slug)}}" style="white-space: inherit !important;color: #797979;">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <i class="{{$product->icon}}" style="font-size: 60px;"></i>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <h2 style="font-size: 16px;">{{$product->product_name}}</h2>
+                                                <p style="white-space: pre-line;overflow: hidden;text-overflow: revert-layer;height: 50px;">{{$product->short_description}}</p>
+                                            </div>
+                                        </div>
                                     </a>
                                 </li>
                             @endforeach
