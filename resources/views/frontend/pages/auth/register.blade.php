@@ -1,4 +1,3 @@
-<!-- index.blade.php -->
 @extends('frontend.layouts.app')
 
 @section('content')
