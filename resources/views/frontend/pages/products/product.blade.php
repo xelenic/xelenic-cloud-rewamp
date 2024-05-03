@@ -33,10 +33,36 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-
+                        <a class="btn btn-primary">Create Free Account</a>
+                        <a class="btn btn-secondary">Get started with {{$productDetails->product_name}}</a>
                     </div>
                     <div class="card-body">
-                       {!! $productDetails->description !!}
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Overview</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Pricing</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Documentation</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                               <div class="container">
+                                   <div style="margin-top: 50px">
+                                       {!! $productDetails->description !!}
+                                   </div>
+                               </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
