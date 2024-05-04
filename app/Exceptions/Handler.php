@@ -31,8 +31,37 @@ class Handler extends ExceptionHandler
         });
     }
 
+    public function getDahboardParams($url)
+    {
+
+        $parsedUrl = parse_url($url);
+        $path = $parsedUrl['path'];
+        $segments = explode('/', $path);
+        $dashboardParam = null;
+        foreach ($segments as $segment) {
+            if ($segment === 'dashboard') {
+                $dashboardParam = next($segments);
+                break;
+            }
+        }
+        if ($dashboardParam !== null) {
+         return $dashboardParam;
+        } else {
+            return null;
+        }
+    }
+
     public function render($request, Throwable $exception)
     {
+
+        $getDashboardDetector = $this->getDahboardParams($request->url());
+
+        if($getDashboardDetector)
+        {
+            return response()->view('error.backend.404');
+        }
+
+
         if ($exception instanceof ModelNotFoundException || $exception instanceof HttpException) {
             return response()->view('error.404', [], 404);
         }
