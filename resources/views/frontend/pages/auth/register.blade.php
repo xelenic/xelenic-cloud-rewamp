@@ -79,10 +79,15 @@
                             <div style="padding-top: 10px;text-align: center;margin-top: 20px;">
                                 <button type="submit" class="btn btn-primary">Create new Account</button>
                                 <span>Or</span>
-                                <button type="submit" class="btn btn-dark"><i style="color: white !important;"
-                                                                              class="icon-server"></i> Sign in using
-                                    Github
+                                <button type="submit" class="btn btn-dark">
+                                    <i style="color: white !important;" class="icon-server"></i> Sign in using Github
                                 </button>
+
+                                <div style="padding-top: 10px">
+                                    <p>Do you have an existing account ?</p>
+                                    <a href="" class="btn btn-primary"> Sign In</a>
+                                </div>
+
                             </div>
 
 
