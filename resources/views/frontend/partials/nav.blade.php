@@ -68,7 +68,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#" style="white-space: inherit !important;color: #797979;">
+                            <a class="dropdown-item" href="{{url('research-and-development')}}" style="white-space: inherit !important;color: #797979;">
                                 <h2 style="font-size: 26px;">Research and Development</h2>
                                 <p>Whether your business is early in its journey or well on its way to
                                     digital transformation, Google Cloud can help solve your toughest challenges.</p>
