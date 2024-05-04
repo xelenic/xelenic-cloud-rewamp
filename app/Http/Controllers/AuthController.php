@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdminRoleUser;
+use App\Models\UserCreditBalance;
 use App\Rules\CheckUserEmailExistingCreateRule;
 use App\Rules\CheckUserExistingCreate;
 use Illuminate\Http\Request;
@@ -111,6 +112,11 @@ class AuthController extends Controller
         $adminroleUser->user_id = $user->id;
         $adminroleUser->role_id = 2;
         $adminroleUser->save();
+
+        $creaditRecordes = new UserCreditBalance;
+        $creaditRecordes->user_id = $user->id;
+        $creaditRecordes->credit = 0;
+        $creaditRecordes->save();
 
         admin_toastr(trans('admin.login_successful'));
         $rate_limit_key = 'login-tries-'.Admin::guardName();

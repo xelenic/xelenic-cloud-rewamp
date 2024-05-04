@@ -50,43 +50,43 @@
                             @csrf
                             <div>
                                 <label style="text-align: left !important;" for="name"
-                                       class="col-md-4 col-form-label text-md-right">Name</label>
+                                       class="col-md-4 col-form-label text-md-right">{{__('Name')}}</label>
                                 <input type="text" name="name" value="{{old('name')}}" class="form-control" required>
                             </div>
                             <div>
                                 <label style="text-align: left !important;" for="name"
-                                       class="col-md-4 col-form-label text-md-right">Email</label>
+                                       class="col-md-4 col-form-label text-md-right">{{__('Email')}}</label>
                                 <input type="email" name="email_address" value="{{old('email_address')}}" class="form-control" required>
                             </div>
                             <div>
                                 <label style="text-align: left !important;" for="name"
-                                       class="col-md-4 col-form-label text-md-right">Username</label>
+                                       class="col-md-4 col-form-label text-md-right">{{__('Username')}}}</label>
                                 <input type="text" name="username" value="{{old('username')}}" class="form-control" required>
                             </div>
                             <div>
                                 <label style="text-align: left !important;" for="name"
-                                       class="col-md-4 col-form-label text-md-right">Password</label>
+                                       class="col-md-4 col-form-label text-md-right">{{__('Password')}}</label>
                                 <input type="password" name="password" class="form-control" required>
                             </div>
                             <div style="margin-top: 10px">
                                 <input style="text-align: left !important;" type="checkbox" name="email_news_letters">
-                                <label for="">Receive occasional product updates and announcements.</label>
+                                <label for="">{{__('Receive occasional product updates and announcements.')}}</label>
                             </div>
                             <div style="margin-top: 10px">
                                 <input style="text-align: left !important;" type="checkbox" name="agreement" required>
-                                <label for="">Agree our <a href="#">license and polices</a> </label>
+                                <label for="">Agree our <a href="#">{{__('license and polices')}}</a> </label>
                             </div>
 
                             <div style="padding-top: 10px;text-align: center;margin-top: 20px;">
-                                <button type="submit" class="btn btn-primary"  style="background: #0d6efd">Create new Account</button>
+                                <button type="submit" class="btn btn-primary"  style="background: #0d6efd">{{__('Create new Account')}}</button>
                                 <span>Or</span>
                                 <button type="submit" class="btn btn-dark">
-                                    <i style="color: white !important;" class="icon-server"></i> Sign in using Github
+                                    <i style="color: white !important;" class="icon-server"></i> {{__('Sign in using Github')}}
                                 </button>
 
                                 <div style="margin-top: 20px;">
                                     <p>Do you have an existing account ?</p>
-                                    <a href="{{url('login')}}" class="btn btn-primary" style="background: #0d6efd"> Sign in Xelenic </a>
+                                    <a href="{{url('login')}}" class="btn btn-primary" style="background: #0d6efd"> {{__('Sign in Xelenic')}} </a>
                                 </div>
 
                             </div>
