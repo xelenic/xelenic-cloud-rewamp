@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdminRoleUser;
+use App\Rules\CheckUserEmailExistingCreateRule;
 use App\Rules\CheckUserExistingCreate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -90,6 +91,8 @@ class AuthController extends Controller
     public function register_post(Request $request)
     {
         $validatedData = $request->validate([
+            'name' => 'required',
+            'email_address' => ['required','email',new CheckUserEmailExistingCreateRule()],
             'username' => ['required','min:3',new CheckUserExistingCreate()],
             'password' => 'required|min:6',
         ]);

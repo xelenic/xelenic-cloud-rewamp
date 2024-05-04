@@ -30,7 +30,7 @@
 
                 </div>
 
-                <div class="col-md-6" style="padding: 20px;margin-bottom: 20%;">
+                <div class="col-md-6" style="">
                     <h2 style="font-size: 30px;text-align: center">Accelerate your digital transformation</h2>
                     <div style="text-align: center">Create your own account with Xelenic Cloud and Lets make</div>
 
@@ -70,9 +70,8 @@
                             <div style="padding-top: 10px;text-align: center;margin-top: 20px;">
                                 <button type="submit" class="btn btn-primary">Login your Xelenic Console</button>
                                 <span>Or</span>
-                                <button type="submit" class="btn btn-dark"><i style="color: white !important;"
-                                                                              class="icon-server"></i> Sign in using
-                                    Github
+                                <button type="submit" class="btn btn-dark">
+                                    <i style="color: white !important;" class="icon-server"></i> Sign in using Github
                                 </button>
                             </div>
 
