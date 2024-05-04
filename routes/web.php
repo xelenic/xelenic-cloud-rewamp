@@ -5,6 +5,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductPageController;
 use App\Http\Controllers\ResearchAndDevelopmentController;
+use App\Http\Controllers\HelpAndSupporController;
+use App\Http\Controllers\OpenSourcesContributionController;
+use App\Http\Controllers\WikiController;
+
 
 /*
 |--------------------------------------------------------------------------
