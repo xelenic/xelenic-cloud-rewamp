@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductPageController;
+use App\Http\Controllers\ResearchAndDevelopmentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +34,9 @@ Route::post('login', [AuthController::class, 'postLogin'])->name('login.post');
 
 // products
 Route::get('/products/{slug}', [ProductPageController::class, 'show'])->name('product.show');
+Route::get('products-list',[ProductPageController::class, 'index'])->name('products.list');
+Route::get('research-and-development', [ResearchAndDevelopmentController::class, 'index'])->name('research-and_development.index');
+
 
 //End of frontend routes
 
