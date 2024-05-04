@@ -35,8 +35,21 @@ Route::post('login', [AuthController::class, 'postLogin'])->name('login.post');
 // products
 Route::get('/products/{slug}', [ProductPageController::class, 'show'])->name('product.show');
 Route::get('products-list',[ProductPageController::class, 'index'])->name('products.list');
-Route::get('research-and-development', [ResearchAndDevelopmentController::class, 'index'])->name('research-and_development.index');
+Route::get('research-and-development', [ResearchAndDevelopmentController::class, 'index'])->name('research-and-development.index');
 
 
 //End of frontend routes
+
+
+//help and support
+Route::get('help-and-support',[HelpAndSupporController::class, 'index'])->name('help-and-support.help');
+
+//Career student pass
+Route::get('career-student-pass',[CareerStudentPassController::class, 'index'])->name('career-student-pass.career');
+
+//Open Sources Contribution
+Route::get('help-and-support',[OpenSourcesContributionController::class, 'index'])->name('open-sources-contribution.career');
+ 
+//wiki
+Route::get('wiki',[WikiController::class, 'index'])->name('wiki.wiki');
 
