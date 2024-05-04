@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c80e80948b7fdb106a7fbbc6bd368512",
+    "content-hash": "3b28d149c201cc4d5b1701f369b95302",
     "packages": [
         {
             "name": "brick/math",
@@ -3088,66 +3088,6 @@
                 "source": "https://github.com/open-admin-org/media-manager/tree/v1.0.3"
             },
             "time": "2023-01-10T13:46:10+00:00"
-        },
-        {
-            "name": "open-admin-ext/page-designer",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/open-admin-org/page-designer.git",
-                "reference": "563a9cb5954f856a297fe83b8e3057506e23ed75"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/open-admin-org/page-designer/zipball/563a9cb5954f856a297fe83b8e3057506e23ed75",
-                "reference": "563a9cb5954f856a297fe83b8e3057506e23ed75",
-                "shasum": ""
-            },
-            "require": {
-                "open-admin-ext/ckeditor": "~1.0",
-                "open-admin-org/open-admin": "~1.0.14",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "OpenAdmin\\Admin\\PageDesigner\\PageDesignerServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "OpenAdmin\\Admin\\PageDesigner\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "open-admin",
-                    "email": "info@open-admin.org"
-                }
-            ],
-            "description": "Page designer for open admin",
-            "homepage": "https://github.com/open-admin-org/page-designer",
-            "keywords": [
-                "designer",
-                "free",
-                "open-admin",
-                "page",
-                "random"
-            ],
-            "support": {
-                "issues": "https://github.com/open-admin-org/page-designer/issues",
-                "source": "https://github.com/open-admin-org/page-designer/tree/v1.0.1"
-            },
-            "time": "2024-01-02T21:47:53+00:00"
         },
         {
             "name": "open-admin-org/open-admin",

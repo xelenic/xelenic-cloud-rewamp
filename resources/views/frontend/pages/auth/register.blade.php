@@ -56,7 +56,7 @@
                             <div>
                                 <label style="text-align: left !important;" for="name"
                                        class="col-md-4 col-form-label text-md-right">Email</label>
-                                <input type="email" name="email" value="{{old('email')}}" class="form-control" required>
+                                <input type="email" name="email_address" value="{{old('email_address')}}" class="form-control" required>
                             </div>
                             <div>
                                 <label style="text-align: left !important;" for="name"
