@@ -32,6 +32,8 @@ Route::post('login', [AuthController::class, 'postLogin'])->name('login.post');
 
 // products
 Route::get('/products/{slug}', [ProductPageController::class, 'show'])->name('product.show');
+Route::get('products-list',[ProductPageController::class, 'index'])->name('products.list');
+
 
 //End of frontend routes
 
