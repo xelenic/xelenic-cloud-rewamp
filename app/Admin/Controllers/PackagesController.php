@@ -81,17 +81,36 @@ class PackagesController extends AdminController
     {
         $form = new Form(new Packages());
 
-        $form->text('package_name', __('Package name'));
-        $form->number('credits', __('Credits'));
-        $form->number('price', __('Price'));
-        $form->text('discount', __('Discount'));
-        $form->text('final_price', __('Final price'));
-        $form->text('status', __('Status'))->default('active');
-        $form->text('package_type', __('Package type'))->default('credit');
-        $form->text('package_image', __('Package image'));
-        $form->textarea('description', __('Description'));
-        $form->textarea('short_description', __('Short description'));
-        $form->textarea('slug', __('Slug'));
+        $form->tab('General', function ($form) {
+            $form->text('package_name', __('Package name'));
+            $form->ckeditor('description', __('Description'));
+            $form->textarea('short_description', __('Short description'));
+            $form->textarea('slug', __('Slug'));
+
+            $form->select('status', __('Status'))->options([
+                'active' => 'Active',
+                'inactive' => 'Inactive',
+            ]);
+            $form->number('package_type', __('Package type'))->options([
+                'For Student' => 'For Student',
+                'For Business' => 'For Business',
+            ]);
+            $form->image('package_image', __('Package image'));
+        });
+
+        $form->tab('Pricing', function ($form) {
+            $form->text('credits', __('Credits'));
+            $form->number('price', __('Price'));
+            $form->number('discount', __('Discount'));
+            $form->number('final_price', __('Final price'));
+        });
+
+
+
+
+
+
+
 
         return $form;
     }
