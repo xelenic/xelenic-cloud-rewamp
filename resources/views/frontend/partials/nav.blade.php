@@ -11,7 +11,7 @@
 
         @if($frontend_enabled_product_list->count() > 0)
             <ul class="nav navbar-nav hidden-sm visible-lg-block" id="products" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-            <button style="background-color: rgba(0, 0, 255, 0); border: none; color: white; ">Products</button>
+                <button style="background-color: rgba(0, 0, 255, 0); border: none; color: white; ">Products</button>
             </ul>
             <ul class="dropdown-menu dropdown-menu-hover" aria-labelledby="products">
                 <div class="container">
