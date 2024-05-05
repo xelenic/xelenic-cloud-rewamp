@@ -15,7 +15,7 @@ class PaymentHistoryController extends AdminController
      *
      * @var string
      */
-    protected $title = 'PaymentHistory';
+    protected $title = 'Billing';
 
     /**
      * Make a grid builder.
@@ -64,10 +64,8 @@ class PaymentHistoryController extends AdminController
     protected function form()
     {
         $form = new Form(new PaymentHistory());
+        $form->setView('backend.payment.create.payment');
 
-        $form->text('payment_method', __('Payment method'));
-        $form->text('user_id', __('User id'));
-        $form->text('payment_type', __('Payment type'));
 
         return $form;
     }

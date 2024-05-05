@@ -91,7 +91,7 @@ class PackagesController extends AdminController
                 'active' => 'Active',
                 'inactive' => 'Inactive',
             ]);
-            $form->number('package_type', __('Package type'))->options([
+            $form->select('package_type', __('Package type'))->options([
                 'For Student' => 'For Student',
                 'For Business' => 'For Business',
             ]);
