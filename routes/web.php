@@ -36,6 +36,8 @@ Route::post('login', [AuthController::class, 'postLogin'])->name('login.post');
 Route::get('/products/{slug}', [ProductPageController::class, 'show'])->name('product.show');
 Route::get('products-list',[ProductPageController::class, 'index'])->name('products.list');
 
+Route::get('dashboard/auth/redirect/login', [\App\Http\Controllers\AuthController::class, 'redirectLogin'])->name('redirectLogin');
+
 
 //End of frontend routes
 

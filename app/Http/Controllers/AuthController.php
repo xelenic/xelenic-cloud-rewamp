@@ -166,4 +166,9 @@ class AuthController extends Controller
 
         return property_exists($this, 'redirectTo') ? $this->redirectTo : config('admin.route.prefix');
     }
+
+    public function redirectLogin()
+    {
+       return view('backend.logout.logout_page');
+    }
 }
