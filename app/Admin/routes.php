@@ -19,4 +19,6 @@ Route::group([
     $router->resource('payment-histories', \App\Admin\Controllers\PaymentHistoryController::class);
     $router->resource('server-religions', \App\Admin\Controllers\ServerReligionController::class);
     $router->resource('blogs', \App\Admin\Controllers\BlogController::class);
+
+    $router->resource('packages', \App\Admin\Controllers\PackagesController::class);
 });
