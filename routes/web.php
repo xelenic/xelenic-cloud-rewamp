@@ -42,6 +42,6 @@ Route::get('dashboard/auth/redirect/login', [\App\Http\Controllers\AuthControlle
 Route::get('/payment', [\App\Http\Controllers\PaymentController::class, 'index'])->name('payment');
 Route::post('/payment/create', [\App\Http\Controllers\PaymentController::class, 'createPaymentIntent'])->name('payment.create');
 //End of frontend routes
-Route::get('/payment/confirmation/{clientSecret}', [\App\Http\Controllers\PaymentController::class, 'showPaymentConfirmation'])->name('payment.confirmation');
+Route::get('/payment/confirmation/{clientSecret}/{detailHash}', [\App\Http\Controllers\PaymentController::class, 'showPaymentConfirmation'])->name('payment.confirmation');
 
 

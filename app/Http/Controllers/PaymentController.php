@@ -21,14 +21,27 @@ class PaymentController extends Controller
 
     public function createPaymentIntent(Request $request)
     {
-        $amount = $request->input('amount');
-        $paymentIntent = $this->stripeService->createPaymentIntent($amount);
 
-        return redirect()->route('payment.confirmation', $paymentIntent->client_secret);
+        $hashDetails = [
+            'amount' =>  $request->input('amount'),
+            'credit_amount' => $request->input('credit_price'),
+        ];
+        $paymentIntent = $this->stripeService->createPaymentIntent($request->input('amount'),'usd');
+
+
+        return redirect()->route('payment.confirmation', [
+            $paymentIntent->client_secret,
+            base64_encode(json_encode($hashDetails))
+            ]);
     }
 
-    public function showPaymentConfirmation($clientSecret)
+    public function showPaymentConfirmation($clientSecret,$detailHash)
     {
-        return view('backend.payment.create.payment_confirmation', ['clientSecret' => $clientSecret]);
+        $hashDecode = base64_decode($detailHash);
+        $hashDetails = json_decode($hashDecode, true);
+        return view('backend.payment.create.payment_confirmation', [
+            'clientSecret' => $clientSecret,
+            'detailHash' => $hashDetails
+            ]);
     }
 }
