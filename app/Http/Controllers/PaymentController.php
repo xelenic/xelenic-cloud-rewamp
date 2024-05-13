@@ -24,7 +24,7 @@ class PaymentController extends Controller
 
         $hashDetails = [
             'amount' =>  $request->input('amount'),
-            'credit_amount' => $request->input('credit_price'),
+            'credit_amount' => $request->input('purchased_credit_balance'),
         ];
         $paymentIntent = $this->stripeService->createPaymentIntent($request->input('amount'),'usd');
 
@@ -44,4 +44,7 @@ class PaymentController extends Controller
             'detailHash' => $hashDetails
             ]);
     }
+
+
+
 }

@@ -44,6 +44,7 @@
                             <div class="form-group">
                                 <label>Amount (USD)</label>
                                 <input id="p_price_input" type="number" name="amount" value="0.00" class="form-control" required>
+                                <input type="hidden" id="purchased_credit_balance" name="purchased_credit_balance" value="0">
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary">Top up Credit Balance</button>
@@ -85,10 +86,12 @@
     var p_price = document.getElementById('p_price');
     var pc_price = document.getElementById('pc_price');
     var p_priced = document.getElementById('p_priced');
+    var updatequery = document.getElementById('purchased_credit_balance');
     var presentage = 0;
     var inputvalue = 0;
 
     p_price_input.addEventListener('input', function () {
+
         inputvalue = p_price_input.value;
         // 10% discount
 
@@ -97,6 +100,7 @@
 
        pc_price.textContent = (p_price_input.value - presentage).toFixed(2);
         p_priced.textContent = inputvalue;
+        updatequery.value = (p_price_input.value - presentage).toFixed(2);
 
     });
 </script>

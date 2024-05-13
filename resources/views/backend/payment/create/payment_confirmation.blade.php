@@ -99,7 +99,7 @@
                                 <div class="card">
                                     <di class="card-body">
                                         <p>Purchased Credits</p>
-                                        <h4>LKR 0.00</h4>
+                                        <h4>LKR {{$detailHash['credit_amount']}}</h4>
                                     </di>
                                 </div>
                             </div>
@@ -136,7 +136,6 @@
         cardElement.mount('#card-element');
 
         var confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
-        var paymentStatus = document.getElementById('paymentStatus');
 
         confirmPaymentBtn.addEventListener('click', function () {
             stripe.confirmCardPayment(clientSecret, {
@@ -148,14 +147,14 @@
                 }
             }).then(function (result) {
                 if (result.error) {
-                    console.error(result.error.message);
-                    paymentStatus.textContent = 'Payment Failed';
+                    console.error('343434');
+                    window.location.href = "{{url('dashboard/payment-histories')}}";
                 } else {
                     if (result.paymentIntent.status === 'succeeded') {
-                        paymentStatus.textContent = 'Payment Succeeded';
+                       $('#confirmPaymentBtn').attr('disabled', true);
                         // Additional logic for successful payment
                     } else {
-                        paymentStatus.textContent = 'Payment Failed';
+
                     }
                 }
             });

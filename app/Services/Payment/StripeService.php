@@ -21,6 +21,13 @@ class StripeService
         ]);
     }
 
+    public function retrievePaymentIntent($paymentIntentId)
+    {
+        return $this->stripe->paymentIntents->retrieve($paymentIntentId);
+    }
+
+
+
 
 
     // Other Stripe methods can be added here
