@@ -59,12 +59,13 @@ class PaymentController extends Controller
         $extractedString = substr($paymentIntentID, 0, $underscorePos);
 
         $paymentIntent = $this->stripeService->retrievePaymentIntent($extractedString);
-        if($paymentIntent->status == 'succeeded'){
+        if($paymentIntent->status == 'succeeded') {
 
-            $paymentDetails = PaymentTokens::where('intent_response', $paymentIntentID)->first();
+            $paymentDetails = PaymentTokens::where('intent_response', $paymentIntentID)
+                ->where('is_checked_flag', null)
+                ->first();
 
-            if($paymentDetails)
-            {
+            if ($paymentDetails) {
                 $paymentDetails = json_decode($paymentDetails->response);
 
 
@@ -81,13 +82,22 @@ class PaymentController extends Controller
                 $paymentHistories->save();
                 addCreditBalance($paymentDetails->credit_amount);
 
+                PaymentTokens::where('intent_response', $paymentIntentID)
+                    ->update([
+                        'is_checked_flag' => 'done'
+                    ]);
             }
+
+
+            $paymentDetails = PaymentTokens::where('intent_response', $paymentIntentID)
+                ->where('is_checked_flag', 'done')
+                ->first();
+
+
             return view('backend.payment.create.payment_status', [
                 'paymentIntent' => $paymentIntent,
-                'paymentDetails' => $paymentDetails,
+                'paymentDetails' => json_decode($paymentDetails->response),
             ]);
-        }else{
-
         }
     }
 
