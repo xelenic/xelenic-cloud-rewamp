@@ -24,33 +24,48 @@ class GitHubController extends Controller
     {
         $githubUser = Socialite::driver('github')->user();
 
-        $randomPassword = 'Redhacker1994@#';
+        $getUser  = Administrator::where('github_id', $githubUser->getId())
+            ->first();
 
-        $user = Administrator::create(
-            [
-                'name' => $githubUser->name,
-                'username' => $githubUser->nickname,
-                'email_address' => $githubUser->email,
-                'password' => Hash::make($randomPassword)
-            ]
-        );
+        if(!$getUser)
+        {
+            $randomPassword = 'Redhacker1994@#';
 
-        $adminroleUser = new AdminRoleUser;
-        $adminroleUser->user_id = $user->id;
-        $adminroleUser->role_id = 2;
-        $adminroleUser->save();
+            $user = Administrator::create(
+                [
+                    'name' => $githubUser->name,
+                    'username' => $githubUser->nickname,
+                    'email_address' => $githubUser->email,
+                    'password' => Hash::make($githubUser->getId()),
+//                'github_id' =>  $githubUser->getId()
+                ]
+            );
 
-        $creaditRecordes = new UserCreditBalance;
-        $creaditRecordes->user_id = $user->id;
-        $creaditRecordes->credit = 0;
-        $creaditRecordes->save();
+
+            $userDetails = Administrator::where('id', $user->id)->update([
+                'github_id' => $githubUser->getId()
+            ]);
+
+            $adminroleUser = new AdminRoleUser;
+            $adminroleUser->user_id = $user->id;
+            $adminroleUser->role_id = 2;
+            $adminroleUser->save();
+
+            $creaditRecordes = new UserCreditBalance;
+            $creaditRecordes->user_id = $user->id;
+            $creaditRecordes->credit = 0;
+            $creaditRecordes->save();
+
+
+        }
 
         admin_toastr(trans('admin.login_successful'));
         $rate_limit_key = 'login-tries-'.Admin::guardName();
 
         $credentials = [
             'username' => $githubUser->nickname,
-            'password' => $randomPassword];
+            'password' => $githubUser->getId()
+        ];
         $remember    = 1;
 
         if ($this->guard()->attempt($credentials, $remember)) {

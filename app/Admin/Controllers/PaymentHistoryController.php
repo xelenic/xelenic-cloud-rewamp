@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use OpenAdmin\Admin\Admin;
 use OpenAdmin\Admin\Controllers\AdminController;
 use OpenAdmin\Admin\Form;
 use OpenAdmin\Admin\Grid;
@@ -24,8 +25,11 @@ class PaymentHistoryController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new PaymentHistory());
 
+       $userId =  \OpenAdmin\Admin\Facades\Admin::user()->id;
+
+        $grid = new Grid(new PaymentHistory());
+        $grid->model()->where('user_id', $userId);
         $grid->column('id', __('Id'));
         $grid->column('payment_method', __('Payment method'));
         $grid->column('user_id', __('User id'));
