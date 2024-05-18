@@ -43,7 +43,8 @@ class GitHubController extends Controller
 
 
             $userDetails = Administrator::where('id', $user->id)->update([
-                'github_id' => $githubUser->getId()
+                'github_id' => $githubUser->getId(),
+                'github_token' => $githubUser->token,
             ]);
 
             $adminroleUser = new AdminRoleUser;

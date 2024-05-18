@@ -21,4 +21,6 @@ Route::group([
     $router->resource('blogs', \App\Admin\Controllers\BlogController::class);
 
     $router->resource('packages', \App\Admin\Controllers\PackagesController::class);
+
+//    $router->resource('repos', \App\Admin\Controllers\ReposController::class);
 });
