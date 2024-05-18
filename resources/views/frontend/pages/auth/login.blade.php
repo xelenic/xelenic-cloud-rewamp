@@ -70,9 +70,9 @@
                             <div style="padding-top: 10px;text-align: center;margin-top: 20px;">
                                 <button type="submit" class="btn btn-primary">Login your Xelenic Console</button>
                                 <span>Or</span>
-                                <button type="submit" class="btn btn-dark">
+                                <a href="{{ route('auth.github') }}" class="btn btn-dark">
                                     <i style="color: white !important;" class="icon-server"></i> Sign in using Github
-                                </button>
+                                </a>
                             </div>
 
                             <div style="padding-top: 10px;text-align: center;margin-top: 20px;">

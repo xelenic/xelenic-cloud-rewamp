@@ -80,9 +80,9 @@
                             <div style="padding-top: 10px;text-align: center;margin-top: 20px;">
                                 <button type="submit" class="btn btn-primary"  style="background: #0d6efd">{{__('Create new Account')}}</button>
                                 <span>Or</span>
-                                <button type="submit" class="btn btn-dark">
+                                <a href="{{ route('auth.github') }}" class="btn btn-dark">
                                     <i style="color: white !important;" class="icon-server"></i> {{__('Sign in using Github')}}
-                                </button>
+                                </a>
 
                                 <div style="margin-top: 20px;">
                                     <p>Do you have an existing account ?</p>

@@ -46,3 +46,11 @@ Route::get('/payment/confirmation/{clientSecret}/{detailHash}', [\App\Http\Contr
 Route::get('/payment/payment-status/{clientSecret}', [\App\Http\Controllers\PaymentController::class, 'getPaymentStatus'])->name('payment.getPaymentStatus');
 
 
+
+// GitHub login route
+Route::get('auth/github', [\App\Http\Controllers\GitHubController::class, 'redirectToGitHub'])->name('auth.github');
+
+// GitHub callback route
+Route::get('auth/github/callback', [\App\Http\Controllers\GitHubController::class, 'handleGitHubCallback']);
+
+
