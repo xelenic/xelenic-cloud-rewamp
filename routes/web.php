@@ -43,5 +43,6 @@ Route::get('/payment', [\App\Http\Controllers\PaymentController::class, 'index']
 Route::post('/payment/create', [\App\Http\Controllers\PaymentController::class, 'createPaymentIntent'])->name('payment.create');
 //End of frontend routes
 Route::get('/payment/confirmation/{clientSecret}/{detailHash}', [\App\Http\Controllers\PaymentController::class, 'showPaymentConfirmation'])->name('payment.confirmation');
+Route::get('/payment/payment-status/{clientSecret}', [\App\Http\Controllers\PaymentController::class, 'getPaymentStatus'])->name('payment.getPaymentStatus');
 
 

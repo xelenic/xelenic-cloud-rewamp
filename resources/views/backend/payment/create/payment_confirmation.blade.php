@@ -151,8 +151,10 @@
                     window.location.href = "{{url('dashboard/payment-histories')}}";
                 } else {
                     if (result.paymentIntent.status === 'succeeded') {
-                       $('#confirmPaymentBtn').attr('disabled', true);
-                        // Additional logic for successful payment
+                       // $('#confirmPaymentBtn').attr('disabled', true);
+                        console.log(result.paymentIntent);
+                       var paymentIntent = '{{route('payment.getPaymentStatus', $clientSecret)}}';
+                        window.location.href = paymentIntent;
                     } else {
 
                     }
