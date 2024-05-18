@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PaymentHistory;
 use App\Models\PaymentTokens;
 use Illuminate\Http\Request;
 use App\Services\Payment\StripeService;
+use OpenAdmin\Admin\Facades\Admin;
 
 class PaymentController extends Controller
 {
@@ -64,6 +66,19 @@ class PaymentController extends Controller
             if($paymentDetails)
             {
                 $paymentDetails = json_decode($paymentDetails->response);
+
+
+                $paymentHistories = new PaymentHistory;
+                $paymentHistories->payment_details = json_encode($paymentIntent);
+                $paymentHistories->payment_method = 'stripe';
+                $paymentHistories->user_id = Admin::user()->id;
+                $paymentHistories->payment_type = 'credit';
+                $paymentHistories->amount = $paymentDetails->amount;
+                $paymentHistories->before_amount = getCreditBalance();
+                $paymentHistories->status = 'success';
+                $paymentHistories->discount = 0;
+                $paymentHistories->is_package = 0;
+                $paymentHistories->save();
                 addCreditBalance($paymentDetails->credit_amount);
 
             }
