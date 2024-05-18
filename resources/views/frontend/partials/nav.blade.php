@@ -106,7 +106,7 @@
             @if(Admin::user())
                 <ul class="nav ms-auto d-flex align-items-center">
                     <li class="nav-item">
-                        <a href="{{url('dashboard')}}">
+                        <a href="{{url('dashboard')}}" style="text-decoration:unset !important;color: white">
                             <div class="user-menu d-flex align-items-center px-3" href="#">
                                 <span class="bg-light inline rounded-circle user-image"><img src="{{url('vendor/open-admin/open-admin/gfx/user.svg')}}" alt="User Image"></span>
                                 <span class="hidden-xs">{{Admin::user()->name}}</span>
@@ -123,7 +123,7 @@
         @else
             <ul class="nav order-2 ms-auto d-flex align-items-center">
                 <li class="nav-item">
-                    <a href="sjkdhakjsdhas">
+                    <a href="sjkdhakjsdhas" style="text-decoration: unset !important;">
                         <div class="user-menu d-flex align-items-center px-3" href="#">
                         <span class="bg-light inline rounded-circle user-image">
                             <img src="{{url('vendor/open-admin/open-admin/gfx/user.svg')}}" alt="User Image">
