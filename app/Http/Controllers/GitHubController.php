@@ -32,7 +32,7 @@ class GitHubController extends Controller
         {
             $randomPassword = 'Redhacker1994@#';
 
-            $user = Administrator::create(
+            $getUser = Administrator::create(
                 [
                     'name' => $githubUser->name ? : $githubUser->getNickname(),
                     'username' => $githubUser->nickname ? : $githubUser->nickname,
@@ -42,11 +42,7 @@ class GitHubController extends Controller
                 ]
             );
 
-            $userDetails = Administrator::where('id', $user->id)->update([
-                'github_id' => $githubUser->getId(),
-                'github_token' => $githubUser->token,
-                'refresh_token' => $githubUser->refreshToken,
-            ]);
+
 
 
             $adminroleUser = new AdminRoleUser;
@@ -61,6 +57,12 @@ class GitHubController extends Controller
 
 
         }
+
+        $userDetails = Administrator::where('id', $getUser->id)->update([
+            'github_id' => $githubUser->getId(),
+            'github_token' => $githubUser->token,
+            'refresh_token' => $githubUser->refreshToken,
+        ]);
 
         admin_toastr(trans('admin.login_successful'));
         $rate_limit_key = 'login-tries-'.Admin::guardName();

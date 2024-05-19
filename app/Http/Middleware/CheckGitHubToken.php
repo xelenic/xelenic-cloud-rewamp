@@ -56,7 +56,9 @@ class CheckGitHubToken
 
             $getToken = new GithubService;
             $openData = $getToken->getAccessToken($user->refresh_token);
-            dd($openData);
+            Administrator::where('id', $user->id)->update([
+               'github_token' => $openData
+            ]);
 //            $userDetails = Admin
             return $openData;
 
