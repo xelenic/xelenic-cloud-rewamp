@@ -22,5 +22,5 @@ Route::group([
 
     $router->resource('packages', \App\Admin\Controllers\PackagesController::class);
 
-//    $router->resource('repos', \App\Admin\Controllers\ReposController::class);
+    $router->resource('repos', \App\Admin\Controllers\ReposController::class);
 });

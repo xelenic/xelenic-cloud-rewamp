@@ -56,10 +56,19 @@ class Handler extends ExceptionHandler
 
         $getDashboardDetector = $this->getDahboardParams($request->url());
 
+
         if($getDashboardDetector)
         {
+            if($exception)
+            {
+                return parent::render($request, $exception);
+            }
+
+
+
             return response()->view('error.backend.404');
         }
+
 
 
         if ($exception instanceof ModelNotFoundException || $exception instanceof HttpException) {
