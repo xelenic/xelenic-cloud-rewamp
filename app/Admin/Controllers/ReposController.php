@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Models\Repos;
 use App\Services\RepoManagement\GithubService;
+use Illuminate\Support\Facades\View;
 use OpenAdmin\Admin\Controllers\AdminController;
 use OpenAdmin\Admin\Form;
 use OpenAdmin\Admin\Grid;
@@ -41,7 +42,7 @@ class ReposController extends AdminController
         });
         $grid->column('stargazers_count', __('Stargazers count'));
         $grid->actions(function ($actions) {
-            
+
             $actions->disableEdit();
             $actions->disableDelete();
         });
@@ -58,30 +59,10 @@ class ReposController extends AdminController
     {
         $show = new Show(Repos::findOrFail($id));
 
-        $show->field('name', __('Name'));
-        $show->field('full_name', __('Full name'));
-        $show->field('description', __('Description'));
-        $show->field('fork', __('Fork'));
-        $show->field('url', __('Url'));
-        $show->field('size', __('Size'));
-        $show->field('stargazers_count', __('Stargazers count'));
-        $show->field('watchers_count', __('Watchers count'));
-        $show->field('language', __('Language'));
-        $show->field('has_issues', __('Has issues'));
-        $show->field('has_projects', __('Has projects'));
-        $show->field('permissions', __('Permissions'));
-        $show->field('license', __('License'));
-        $show->field('repo_created_at', __('Repo created at'));
-        $show->field('repo_updated_at', __('Repo updated at'));
-        $show->field('repo_pushed_at', __('Repo pushed at'));
-        $show->field('default_branch', __('Default branch'));
-        $show->field('owner_details', __('Owner details'));
-        $show->field('node_id', __('Node id'));
-        $show->field('repo_id', __('Repo id'));
-        $show->field('html_url', __('Html url'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
-
+        $show->panel()
+            ->style('success')
+            ->title('post detail...')
+            ->view('backend.repo.repo_details');
         return $show;
     }
 
