@@ -5,10 +5,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductPageController;
 use App\Http\Controllers\ResearchAndDevelopmentController;
-use App\Http\Controllers\HelpAndSupporController;
-use App\Http\Controllers\OpenSourcesContributionController;
-use App\Http\Controllers\WikiController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -39,21 +35,22 @@ Route::post('login', [AuthController::class, 'postLogin'])->name('login.post');
 // products
 Route::get('/products/{slug}', [ProductPageController::class, 'show'])->name('product.show');
 Route::get('products-list',[ProductPageController::class, 'index'])->name('products.list');
-Route::get('research-and-development', [ResearchAndDevelopmentController::class, 'index'])->name('research-and-development.index');
+
+Route::get('dashboard/auth/redirect/login', [\App\Http\Controllers\AuthController::class, 'redirectLogin'])->name('redirectLogin');
 
 
+Route::get('/payment', [\App\Http\Controllers\PaymentController::class, 'index'])->name('payment');
+Route::post('/payment/create', [\App\Http\Controllers\PaymentController::class, 'createPaymentIntent'])->name('payment.create');
 //End of frontend routes
+Route::get('/payment/confirmation/{clientSecret}/{detailHash}', [\App\Http\Controllers\PaymentController::class, 'showPaymentConfirmation'])->name('payment.confirmation');
+Route::get('/payment/payment-status/{clientSecret}', [\App\Http\Controllers\PaymentController::class, 'getPaymentStatus'])->name('payment.getPaymentStatus');
 
 
-//help and support
-Route::get('help-and-support',[HelpAndSupporController::class, 'index'])->name('help-and-support.help');
 
-//Career student pass
-Route::get('career-student-pass',[CareerStudentPassController::class, 'index'])->name('career-student-pass.career');
+// GitHub login route
+Route::get('auth/github', [\App\Http\Controllers\GitHubController::class, 'redirectToGitHub'])->name('auth.github');
 
-//Open Sources Contribution
-Route::get('help-and-support',[OpenSourcesContributionController::class, 'index'])->name('open-sources-contribution.career');
- 
-//wiki
-Route::get('wiki',[WikiController::class, 'index'])->name('wiki.wiki');
+// GitHub callback route
+Route::get('auth/github/callback', [\App\Http\Controllers\GitHubController::class, 'handleGitHubCallback']);
+
 

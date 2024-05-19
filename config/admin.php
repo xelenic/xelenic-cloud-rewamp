@@ -132,7 +132,7 @@ return [
         'remember' => true,
 
         // Redirect to the specified URI when user is not authorized.
-        'redirect_to' => 'auth/login',
+        'redirect_to' => 'auth/redirect/login',
 
         // Protect agaist brute force attacks
         'throttle_logins'   => true,

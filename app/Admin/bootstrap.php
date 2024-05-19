@@ -23,7 +23,7 @@ OpenAdmin\Admin\Form::forget(['editor']);
 
 Admin::navbar(function (\OpenAdmin\Admin\Widgets\Navbar $navbar) {
 
-    $navbar->left('Overview');
+    $navbar->right(view('backend.components.navbar_credit_balance', ['credit' => getCreditBalance()]));
 
     // adds ajax refresh button
     $navbar->right(new OpenAdmin\Admin\Widgets\Navbar\RefreshButton());

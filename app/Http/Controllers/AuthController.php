@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdminRoleUser;
+use App\Models\UserCreditBalance;
+use App\Rules\CheckUserEmailExistingCreateRule;
 use App\Rules\CheckUserExistingCreate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -90,6 +92,8 @@ class AuthController extends Controller
     public function register_post(Request $request)
     {
         $validatedData = $request->validate([
+            'name' => 'required',
+            'email_address' => ['required','email',new CheckUserEmailExistingCreateRule()],
             'username' => ['required','min:3',new CheckUserExistingCreate()],
             'password' => 'required|min:6',
         ]);
@@ -99,7 +103,7 @@ class AuthController extends Controller
             [
                 'name' => $request->name,
                 'username' => $request->username,
-                'email' => $request->email,
+                'email_address' => $request->email_address,
                 'password' => Hash::make($request->password)
             ]
         );
@@ -108,6 +112,11 @@ class AuthController extends Controller
         $adminroleUser->user_id = $user->id;
         $adminroleUser->role_id = 2;
         $adminroleUser->save();
+
+        $creaditRecordes = new UserCreditBalance;
+        $creaditRecordes->user_id = $user->id;
+        $creaditRecordes->credit = 0;
+        $creaditRecordes->save();
 
         admin_toastr(trans('admin.login_successful'));
         $rate_limit_key = 'login-tries-'.Admin::guardName();
@@ -156,5 +165,10 @@ class AuthController extends Controller
         }
 
         return property_exists($this, 'redirectTo') ? $this->redirectTo : config('admin.route.prefix');
+    }
+
+    public function redirectLogin()
+    {
+       return view('backend.logout.logout_page');
     }
 }

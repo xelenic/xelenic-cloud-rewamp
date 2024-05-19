@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use OpenAdmin\Admin\Config\Config;
+use App\Services\Payment\StripeService;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(StripeService::class, function ($app) {
+            return new StripeService();
+        });
     }
 
     /**
@@ -21,6 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Config::load();
+
     }
 }

@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/payment/confirmation/{clientSecret}/{detailHash}', [\App\Http\Controllers\PaymentController::class, 'showPaymentConfirmation'])->name('payment.confirmation');
