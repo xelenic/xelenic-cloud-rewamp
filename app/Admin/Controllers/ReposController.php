@@ -6,6 +6,7 @@ use App\Models\Repos;
 use App\Services\RepoManagement\GithubService;
 use Illuminate\Support\Facades\View;
 use OpenAdmin\Admin\Controllers\AdminController;
+use OpenAdmin\Admin\Facades\Admin;
 use OpenAdmin\Admin\Form;
 use OpenAdmin\Admin\Grid;
 use OpenAdmin\Admin\Show;
@@ -119,7 +120,8 @@ class ReposController extends AdminController
             if (!$repo || $updateTimeDifference) {
                 Repos::updateOrCreate(
                     [
-                        'repo_id' => $item['id']
+                        'repo_id' => $item['id'],
+
                     ],
                     [
                         'name' => $item['name'],
@@ -141,7 +143,8 @@ class ReposController extends AdminController
                         'default_branch' => $item['default_branch'],
                         'owner_details' => json_encode($item['owner']),
                         'node_id' => $item['node_id'],
-                        'html_url' => $item['html_url']
+                        'html_url' => $item['html_url'],
+                        'user_id' => Admin::user()->id,
                     ]
                 );
             }
