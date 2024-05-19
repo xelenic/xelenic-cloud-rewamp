@@ -23,7 +23,7 @@ class GithubService
 
     public function getUserRepositories($accessToken)
     {
-        $response = $this->client->get('user/repos', [
+       $response = $this->client->get('user/repos', [
             'headers' => [
                 'Authorization' => 'Bearer ' . $accessToken,
             ],

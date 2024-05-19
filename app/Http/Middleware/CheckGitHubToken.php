@@ -33,6 +33,8 @@ class CheckGitHubToken
                     ],
                 ]);
 
+                dd($response);
+
                 if ($response->getStatusCode() !== 200) {
                     $this->refreshToken($user);
                 }
@@ -56,11 +58,22 @@ class CheckGitHubToken
 
             $getToken = new GithubService;
             $openData = $getToken->getAccessToken($user->refresh_token);
-            Administrator::where('id', $user->id)->update([
-               'github_token' => $openData
-            ]);
+
+            if(is_array($openData))
+            {
+                if(key_exists('error',$openData))
+                {
+                    return false;
+                }
+            }else{
+                Administrator::where('id', $user->id)->update([
+                    'github_token' => $openData,
+                ]);
 //            $userDetails = Admin
-            return $openData;
+                return $openData;
+            }
+
+
 
         } catch (\Exception $e) {
             dd($e->getMessage());
