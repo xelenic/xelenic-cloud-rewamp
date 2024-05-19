@@ -24,6 +24,7 @@ class GitHubController extends Controller
     {
         $githubUser = Socialite::driver('github')->user();
 
+
         $getUser  = Administrator::where('github_id', $githubUser->getId())
             ->first();
 
@@ -34,19 +35,19 @@ class GitHubController extends Controller
             $user = Administrator::create(
                 [
                     'name' => $githubUser->name ? : $githubUser->getNickname(),
-                    'username' => $githubUser->nickname,
+                    'username' => $githubUser->nickname ? : $githubUser->nickname,
                     'email_address' => $githubUser->email,
                     'password' => Hash::make($githubUser->getId()),
 //                'github_id' =>  $githubUser->getId()
                 ]
             );
 
-
             $userDetails = Administrator::where('id', $user->id)->update([
                 'github_id' => $githubUser->getId(),
                 'github_token' => $githubUser->token,
                 'refresh_token' => $githubUser->refreshToken,
             ]);
+
 
             $adminroleUser = new AdminRoleUser;
             $adminroleUser->user_id = $user->id;
