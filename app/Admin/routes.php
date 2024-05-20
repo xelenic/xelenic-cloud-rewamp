@@ -24,4 +24,5 @@ Route::group([
 
     $router->resource('repos', \App\Admin\Controllers\ReposController::class)
         ->middleware(\App\Http\Middleware\CheckGitHubToken::class);
+    $router->get('repos-details/{repo_slug}',[\App\Admin\Controllers\ReposController::class,'show_details'])->name('repo_details');
 });

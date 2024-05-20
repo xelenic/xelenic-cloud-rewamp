@@ -9,6 +9,7 @@ use OpenAdmin\Admin\Controllers\AdminController;
 use OpenAdmin\Admin\Facades\Admin;
 use OpenAdmin\Admin\Form;
 use OpenAdmin\Admin\Grid;
+use OpenAdmin\Admin\Layout\Content;
 use OpenAdmin\Admin\Show;
 
 class ReposController extends AdminController
@@ -54,17 +55,13 @@ class ReposController extends AdminController
      * Make a show builder.
      *
      * @param mixed $id
-     * @return Show
+     * @return Content
      */
-    protected function detail($id)
+    protected function detail($id, Content $content)
     {
-        $show = new Show(Repos::findOrFail($id));
-
-        $show->panel()
-            ->style('success')
-            ->title('post detail...')
+        return $content
+            ->title(__('Xelenic Cloud'))
             ->view('backend.repo.repo_details');
-        return $show;
     }
 
     /**
@@ -149,6 +146,13 @@ class ReposController extends AdminController
                 );
             }
         }
+    }
+
+    public function show_details($slug ,Content $content)
+    {
+        return $content
+            ->title(__('Xelenic Cloud'))
+            ->view('backend.repo.repo_details');
     }
 
 }
