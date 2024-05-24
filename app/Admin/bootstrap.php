@@ -1,5 +1,6 @@
 <?php
 use OpenAdmin\Admin\Facades\Admin;
+use OpenAdmin\Admin\Widgets\Box;
 
 /**
  * Open-admin - admin builder based on Laravel.
@@ -24,8 +25,7 @@ OpenAdmin\Admin\Form::forget(['editor']);
 Admin::navbar(function (\OpenAdmin\Admin\Widgets\Navbar $navbar) {
 
     $navbar->right(view('backend.components.navbar_credit_balance', ['credit' => getCreditBalance()]));
-
+//    $navbar->right(view('backend.components.navbar_get_update_github_permanent_token'));
     // adds ajax refresh button
     $navbar->right(new OpenAdmin\Admin\Widgets\Navbar\RefreshButton());
-
 });

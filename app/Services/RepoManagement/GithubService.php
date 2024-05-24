@@ -66,4 +66,15 @@ class GithubService
             return ['error' => $e->getMessage()];
         }
     }
+
+    public function getUser($accessToken)
+    {
+        $response = $this->client->get('user', [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $accessToken,
+            ],
+        ]);
+
+        return json_decode($response->getBody()->getContents(), true);
+    }
 }

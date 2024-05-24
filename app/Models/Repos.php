@@ -33,7 +33,8 @@ class Repos extends Model
         'repo_updated_at',
         'repo_pushed_at',
         'url',
-        'user_id'
+        'user_id',
+        'raw_details'
     ];
 
     use HasFactory;

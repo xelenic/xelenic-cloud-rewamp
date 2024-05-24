@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\Repos\RepoDetailsAction;
 use App\Models\Repos;
 use App\Services\RepoManagement\GithubService;
 use Illuminate\Support\Facades\View;
@@ -28,7 +29,9 @@ class ReposController extends AdminController
      */
     protected function grid()
     {
-        self::feedRepoData();
+
+
+//        self::feedRepoData();
         $grid = new Grid(new Repos());
 
         $grid->column('name', __('Name'))->display(function ($name) {
@@ -47,7 +50,9 @@ class ReposController extends AdminController
 
             $actions->disableEdit();
             $actions->disableDelete();
+            $actions->add(new RepoDetailsAction());
         });
+
         return $grid;
     }
 
@@ -57,11 +62,14 @@ class ReposController extends AdminController
      * @param mixed $id
      * @return Content
      */
-    protected function detail($id, Content $content)
+    protected function showDetails($id, Content $content)
     {
+        $repoDetails = Repos::where('repo_id', $id)->where('user_id', Admin::user()->id)->first();
         return $content
             ->title(__('Xelenic Cloud'))
-            ->view('backend.repo.repo_details');
+            ->view('backend.repo.repo_details',[
+                'repoDetails' => $repoDetails,
+            ]);
     }
 
     /**
@@ -98,10 +106,11 @@ class ReposController extends AdminController
         return $form;
     }
 
-    public function feedRepoData()
+    public function feedRepoData($token)
     {
         $getRepoDetails = new GithubService();
-        $manage = $getRepoDetails->getUserRepositories(\OpenAdmin\Admin\Facades\Admin::user()->github_token);
+        $manage = $getRepoDetails->getUserRepositories($token);
+
 
         foreach ($manage as $item)
         {
@@ -126,6 +135,7 @@ class ReposController extends AdminController
                         'description' => $item['description'],
                         'fork' => $item['fork'],
                         'url' => $item['url'],
+                        'raw_details' => json_encode($item),
                         'size' => $item['size'],
                         'stargazers_count' => $item['stargazers_count'],
                         'watchers_count' => $item['watchers_count'],

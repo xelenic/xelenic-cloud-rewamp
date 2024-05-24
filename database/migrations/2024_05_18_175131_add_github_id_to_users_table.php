@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('admin_users', function (Blueprint $table) {
-            $table->text('github_id')->nullable();
-        });
+        if (!Schema::hasColumn('admin_users', 'github_id')) {
+            Schema::table('admin_users', function (Blueprint $table) {
+                $table->text('github_id')->nullable();
+            });
+        }
     }
 
     /**

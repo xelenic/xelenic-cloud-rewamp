@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('admin_users', function (Blueprint $table) {
-            $table->text('refresh_token')->nullable();
-        });
+        if (!Schema::hasColumn('admin_users', 'refresh_token')) {
+            Schema::table('admin_users', function (Blueprint $table) {
+                $table->text('refresh_token')->nullable();
+            });
+        }
     }
 
     /**

@@ -46,12 +46,12 @@ class GitHubController extends Controller
 
 
             $adminroleUser = new AdminRoleUser;
-            $adminroleUser->user_id = $user->id;
+            $adminroleUser->user_id = $getUser->id;
             $adminroleUser->role_id = 2;
             $adminroleUser->save();
 
             $creaditRecordes = new UserCreditBalance;
-            $creaditRecordes->user_id = $user->id;
+            $creaditRecordes->user_id = $getUser->id;
             $creaditRecordes->credit = 0;
             $creaditRecordes->save();
 
@@ -62,6 +62,7 @@ class GitHubController extends Controller
             'github_id' => $githubUser->getId(),
             'github_token' => $githubUser->token,
             'refresh_token' => $githubUser->refreshToken,
+            'github_token_expires_at' => now()->addSeconds($githubUser->expiresIn)
         ]);
 
         admin_toastr(trans('admin.login_successful'));

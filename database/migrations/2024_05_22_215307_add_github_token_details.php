@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        if (!Schema::hasColumn('admin_users', 'github_token')) {
-            Schema::table('admin_users', function (Blueprint $table) {
-                $table->text('github_token')->nullable();
-            });
-        }
+        Schema::table('admin_users', function (Blueprint $table) {
+            $table->time('github_token_expires_at')->nullable();
+        });
     }
 
     /**
