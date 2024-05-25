@@ -27,4 +27,9 @@ Route::group([
     $router->get('repos-details-slug/{repo_slug}',[\App\Admin\Controllers\ReposController::class,'showDetails'])->name('repo_details');
 
     $router->post('repos/deploy-work-flow-update',[\App\Admin\Controllers\ReposController::class,'deployWorkFlowUpdate'])->name('deploy_work_flow_update');
+
+    $router->resource('server-size-lists', \App\Admin\Controllers\ServerSizeListController::class);
 });
+
+
+

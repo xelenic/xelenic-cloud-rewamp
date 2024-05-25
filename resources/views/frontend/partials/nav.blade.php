@@ -1,5 +1,7 @@
 <!-- nav.blade.php -->
-<header class="custom-navbar navbar navbar-light bg-white p-0 align-items-stretch">
+<header class="custom-navbar navbar navbar-light bg-white p-0 align-items-stretch" style="
+    top: 0px;
+">
     <a class="navbar-brand menu-width container-md bg-semi-dark text-center" href="http://localhost:8000/dashboard">
         <span class="short"><b>Xe</b></span><span class="long"><b>Xelenic</b> Cloud</span>
     </a>
