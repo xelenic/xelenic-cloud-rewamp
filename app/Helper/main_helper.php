@@ -63,6 +63,7 @@ if (! function_exists('getGithubTokens')) {
             // Decode the response
             $response = json_decode($response->body());
 
+
             // Update the user's tokens and expiry date in the database
             \OpenAdmin\Admin\Auth\Database\Administrator::where('id', \OpenAdmin\Admin\Facades\Admin::user()->id)->update([
                 'github_token' => $response->access_token,

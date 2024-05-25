@@ -29,10 +29,13 @@ class ReposController extends AdminController
      */
     protected function grid()
     {
+        $getUpdate = getGithubTokens();
+        dd($getUpdate);
 
 
 //        self::feedRepoData();
         $grid = new Grid(new Repos());
+
 
         $grid->column('name', __('Name'))->display(function ($name) {
             $str = '<svg height="15" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default">
@@ -80,6 +83,8 @@ class ReposController extends AdminController
     protected function form()
     {
         $form = new Form(new Repos());
+//        $getToken = getGithubTokens();
+//        dd($getToken);
 
         $form->textarea('name', __('Name'));
         $form->textarea('full_name', __('Full name'));
