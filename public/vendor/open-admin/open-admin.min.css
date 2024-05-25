@@ -22377,9 +22377,10 @@ body label {
 }
 
 .custom-navbar {
-    position: relative;
+    position: fixed;
     z-index: 10;
-    box-shadow: 0 0 .5rem rgb(0 0 0 / .1)
+    box-shadow: 0 0 .5rem rgb(0 0 0 / .1);
+    width: -webkit-fill-available;
 }
 
 .custom-navbar .nav .nav-link {
@@ -22533,9 +22534,10 @@ body label {
 aside#sidebar {
     float: left;
     min-height: calc(100% - 56px);
-    position: absolute;
+    position: fixed;
     transition: all .3s;
     background: #fbfbfb;
+    height: -webkit-fill-available;
 }
 
 main#main {

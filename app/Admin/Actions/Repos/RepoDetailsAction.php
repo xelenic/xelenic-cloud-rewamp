@@ -7,7 +7,7 @@ use OpenAdmin\Admin\Actions\RowAction;
 
 class RepoDetailsAction extends RowAction
 {
-    public $name = 'repo_details';
+    public $name = 'Setup Repo';
 
     public $icon = 'icon-cogs';
 

@@ -5,7 +5,9 @@ namespace App\Admin\Controllers;
 use App\Admin\Actions\Repos\RepoDetailsAction;
 use App\Models\Repos;
 use App\Services\RepoManagement\GithubService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use OpenAdmin\Admin\Auth\Database\Administrator;
 use OpenAdmin\Admin\Controllers\AdminController;
 use OpenAdmin\Admin\Facades\Admin;
 use OpenAdmin\Admin\Form;
@@ -50,8 +52,10 @@ class ReposController extends AdminController
         $grid->column('stargazers_count', __('Stargazers count'));
         $grid->actions(function ($actions) {
 
+            $actions->showLabels(true);
             $actions->disableEdit();
             $actions->disableDelete();
+            $actions->disableView();
             $actions->add(new RepoDetailsAction());
         });
 
@@ -167,6 +171,15 @@ class ReposController extends AdminController
         return $content
             ->title(__('Xelenic Cloud'))
             ->view('backend.repo.repo_details');
+    }
+
+    public function deployWorkFlowUpdate(Request $request){
+        $content = $request->deploy_workflow;
+        Repos::where('user_id', Admin::user()->id)
+            ->where('id', $request->repo_id)
+            ->update(['deploy_workflow' => $content]);
+        admin_success('Deploy WorkFlow Updated');
+        return back();
     }
 
 }

@@ -25,4 +25,6 @@ Route::group([
     $router->resource('repos', \App\Admin\Controllers\ReposController::class);
 //        ->middleware(\App\Http\Middleware\CheckGitHubToken::class);
     $router->get('repos-details-slug/{repo_slug}',[\App\Admin\Controllers\ReposController::class,'showDetails'])->name('repo_details');
+
+    $router->post('repos/deploy-work-flow-update',[\App\Admin\Controllers\ReposController::class,'deployWorkFlowUpdate'])->name('deploy_work_flow_update');
 });
