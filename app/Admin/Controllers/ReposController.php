@@ -29,11 +29,10 @@ class ReposController extends AdminController
      */
     protected function grid()
     {
-        $getUpdate = getGithubTokens();
-        dd($getUpdate);
 
+//        dd();
 
-//        self::feedRepoData();
+        self::feedRepoData(Admin::user()->github_token);
         $grid = new Grid(new Repos());
 
 

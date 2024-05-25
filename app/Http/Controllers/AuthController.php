@@ -60,6 +60,7 @@ class AuthController extends Controller
         if ($this->guard()->attempt($credentials, $remember)) {
             RateLimiter::clear($rate_limit_key);
 
+
             return $this->sendLoginResponse($request);
         }
 
