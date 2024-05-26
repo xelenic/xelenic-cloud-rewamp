@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Models\ServerSizeList;
+use App\Services\ServerManagement\DoService;
 use OpenAdmin\Admin\Controllers\AdminController;
 use OpenAdmin\Admin\Form;
 use OpenAdmin\Admin\Grid;
@@ -24,21 +25,21 @@ class ServerSizeListController extends AdminController
      */
     protected function grid()
     {
+        $ourDetails = new DoService();
+        $server =  $this->feed();
+//        dd($server);
+
         $grid = new Grid(new ServerSizeList());
 
-        $grid->column('id', __('Id'));
         $grid->column('slug', __('Slug'));
         $grid->column('memory', __('Memory'));
         $grid->column('disk', __('Disk'));
         $grid->column('transfer', __('Transfer'));
         $grid->column('price_monthly', __('Price monthly'));
         $grid->column('price_hourly', __('Price hourly'));
-        $grid->column('regions', __('Regions'));
         $grid->column('vcpus', __('Vcpus'));
         $grid->column('description', __('Description'));
         $grid->column('synced_time', __('Synced time'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
 
         return $grid;
     }
@@ -92,4 +93,61 @@ class ServerSizeListController extends AdminController
 
         return $form;
     }
+
+    public function feed()
+    {
+        $ourDetails = new DoService();
+        $server = $ourDetails->getDropletsSizes();
+        $server = json_decode(json_encode($server), true);
+
+        // Get all current slugs in the database
+        $existingSlugs = ServerSizeList::pluck('slug')->toArray();
+
+        foreach ($server as $key => $value)
+        {
+            // Check if the record exists
+            $serverSizeList = ServerSizeList::where('slug', $value['slug'])->first();
+
+            if ($serverSizeList) {
+                // Update existing record
+                $serverSizeList->disk = $value['disk'];
+                $serverSizeList->memory = $value['memory'];
+                $serverSizeList->transfer = $value['transfer'];
+                $serverSizeList->price_monthly = $value['priceMonthly'];
+                $serverSizeList->price_hourly = $value['priceHourly'];
+                $serverSizeList->regions = json_encode($value['regions']);
+                $serverSizeList->vcpus = $value['vcpus'];
+                $serverSizeList->description = $value['description'];
+                $serverSizeList->synced_time = date('H:i:s');
+                $serverSizeList->save();
+            } else {
+                // Insert new record
+                $serverSizeList = new ServerSizeList();
+                $serverSizeList->slug = $value['slug'];
+                $serverSizeList->disk = $value['disk'];
+                $serverSizeList->memory = $value['memory'];
+                $serverSizeList->transfer = $value['transfer'];
+                $serverSizeList->price_monthly = $value['priceMonthly'];
+                $serverSizeList->price_hourly = $value['priceHourly'];
+                $serverSizeList->regions = json_encode($value['regions']);
+                $serverSizeList->vcpus = $value['vcpus'];
+                $serverSizeList->description = $value['description'];
+                $serverSizeList->synced_time = date('H:i:s');
+                $serverSizeList->save();
+            }
+
+            // Remove the slug from the existing slugs array
+            if (($key = array_search($value['slug'], $existingSlugs)) !== false) {
+                unset($existingSlugs[$key]);
+            }
+        }
+
+        // Delete records that are not in the current API response
+        if (!empty($existingSlugs)) {
+            ServerSizeList::whereIn('slug', $existingSlugs)->delete();
+        }
+
+        return true;
+    }
+
 }
