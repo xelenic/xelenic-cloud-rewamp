@@ -2,7 +2,7 @@
 
 @section('content')
     <div>
-        <div style="background: #6586b7;color: white;height: 179px;">
+        <div style="background: #6586b7;color: white;height: 179px;margin-top: 50px;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-2">

@@ -1,5 +1,7 @@
 <!-- Cloud wave -->
-<div class="header">
+<div class="header" style="
+    padding-top: 60px;
+">
 
 
     <section class="position-relative z-index-2 py-0 mb-n7" style="margin-bottom: 60px">
