@@ -36,6 +36,7 @@ class ReposController extends AdminController
 
         self::feedRepoData(Admin::user()->github_token);
         $grid = new Grid(new Repos());
+        $grid->model()->where('user_id', Admin::user()->id);
 
 
 
