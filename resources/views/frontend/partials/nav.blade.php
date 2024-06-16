@@ -3,7 +3,10 @@
     top: 0px;
 ">
     <a class="navbar-brand menu-width container-md bg-semi-dark text-center" href="http://localhost:8000/dashboard">
-        <span class="short"><b>Xe</b></span><span class="long"><b>Xelenic</b> Cloud</span>
+
+        <img src="{{url('xelenic_dark.png')}}" style="width: 145px;">
+
+{{--        <span class="short"><b>Xe</b></span><span class="long"><b>Xelenic</b> Cloud</span>--}}
     </a>
     <div class="d-flex flex-fill flex-wrap header-items">
 

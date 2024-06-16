@@ -1,0 +1,5 @@
+@include('backend.project_flows.components.service_nodes.server_box')
+@include('backend.project_flows.components.service_nodes.parrot_db')
+@include('backend.project_flows.components.service_nodes.repositories')
+@include('backend.project_flows.components.service_nodes.logs_service')
+@include('backend.project_flows.components.service_nodes.host_capasitor')

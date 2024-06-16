@@ -25,7 +25,9 @@
 
 </head>
 
-<body class="antialiased">
+<body class="antialiased" style="
+    background: white;
+">
 
 
 
