@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<b>Xelenic</b> Cloud',
+    'logo' => '<img src="http://localhost:8000/xelenic_dark.png" style="width: 145px;">',
 
     /*
     |--------------------------------------------------------------------------

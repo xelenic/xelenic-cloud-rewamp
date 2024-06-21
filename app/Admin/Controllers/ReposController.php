@@ -36,6 +36,10 @@ class ReposController extends AdminController
 
         self::feedRepoData(Admin::user()->github_token);
         $grid = new Grid(new Repos());
+        $grid->header(function ($query) {
+            return View::make('backend.repo.repo_header');
+        });
+
         $grid->model()->where('user_id', Admin::user()->id);
 
 
@@ -56,6 +60,10 @@ class ReposController extends AdminController
             return $str;
         });
         $grid->column('stargazers_count', __('Stargazers count'));
+
+
+
+
         $grid->actions(function ($actions) {
 
             $actions->showLabels(true);

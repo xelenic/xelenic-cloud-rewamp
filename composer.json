@@ -16,6 +16,7 @@
         "open-admin-ext/ckeditor": "^1.0",
         "open-admin-ext/media-manager": "^1.0",
         "open-admin-org/open-admin": "^1.0",
+        "phpseclib/phpseclib": "^3.0",
         "riari/laravel-forum": "^5.6",
         "stripe/stripe-php": "^14.5",
         "twbs/bootstrap-icons": "^1.11"
