@@ -1,3 +1,28 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                This is a basic Bootstrap 3.4 modal example.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div style="background: #5f7bce;color: white;height: 179px;">
     <div class="container">
         <div class="row">
@@ -30,7 +55,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-primary">Add to Existing Project</a>
+                                <a class="btn btn-primary"  data-toggle="modal" data-target="#myModal">Add to Existing Project</a>
                                 <a class="btn btn-secondary">Deploy as a new project</a>
                                 <a class="btn btn-secondary"><i class="icon-backward"></i></a>
                             </div>
@@ -48,6 +73,8 @@
                                 </ul>
 
 
+                                @include('backend.dialogs.explore_github_workflows')
+
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade active show" style="color:black !important;" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="card">
@@ -59,7 +86,7 @@
 
 
 
-                                                @include('backend.components.repo_overview')
+
                                             </div>
                                         </div>
                                     </div>
@@ -93,3 +120,6 @@
         </div>
     </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

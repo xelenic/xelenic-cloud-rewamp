@@ -1,13 +1,12 @@
 <div class="card" style="background: linear-gradient(183deg, #d5d5d5, white);">
     <div class="card-body">
         <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-9">
-                <p>Language is {{json_decode($repoDetails->raw_details)->language}}</p>
-                <small>Explore your project workflow and server based piplines.our workflow list or you can create your own workflow.using <b>SH Script</b></small>
-                <br><br>
-                <a href="#" class="btn btn-primary">Explore Workflows</a>
+            <div>
+                <div style="background: url('{{url('chain/php.jpg')}}');height: 250px;background-size: contain;background-repeat:no-repeat;">
+
+                </div>
             </div>
+
         </div>
     </div>
 </div>

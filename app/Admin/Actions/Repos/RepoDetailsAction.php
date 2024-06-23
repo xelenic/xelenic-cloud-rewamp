@@ -7,9 +7,9 @@ use OpenAdmin\Admin\Actions\RowAction;
 
 class RepoDetailsAction extends RowAction
 {
-    public $name = 'Setup Repo';
+    public $name = '<span style="padding-left: 10px">Setup Repo<span';
 
-    public $icon = 'icon-cogs';
+    public $icon = 'icon-box-open';
 
     public function handle(Model $model)
     {
@@ -17,5 +17,8 @@ class RepoDetailsAction extends RowAction
 
         return $this->response()->redirect(url('dashboard/repos-details-slug/'.$model->repo_id));
     }
+
+
+
 
 }

@@ -1,4 +1,4 @@
-<div style="background: url('{{url('dashboard/repo_banner.png')}}');background-size: contain;height: 200px;background-repeat: no-repeat;border-style: solid;border-width: 11px;border-color: #ebeff4;">
+<div style="background: url('{{url('dashboard_res/repo_banner.png')}}');background-size: contain;height: 200px;background-repeat: no-repeat;border-style: solid;border-width: 11px;border-color: #ebeff4;">
     <div class="container">
         <div class="row">
             <div class="col-3">
@@ -21,3 +21,5 @@
         </div>
     </div>
 </div>
+
+@include('backend.dialogs.explore_github_workflows')

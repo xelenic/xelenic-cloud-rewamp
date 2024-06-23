@@ -2,6 +2,7 @@
 use OpenAdmin\Admin\Facades\Admin;
 use OpenAdmin\Admin\Widgets\Box;
 
+
 /**
  * Open-admin - admin builder based on Laravel.
  * @author z-song <https://github.com/z-song>
@@ -29,5 +30,4 @@ Admin::navbar(function (\OpenAdmin\Admin\Widgets\Navbar $navbar) {
     // adds ajax refresh button
     $navbar->right(new OpenAdmin\Admin\Widgets\Navbar\RefreshButton());
 });
-
 

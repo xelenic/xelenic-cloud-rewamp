@@ -18,14 +18,14 @@ class HomeController extends Controller
 ////        $getRepoDetails = new GithubService();
 ////        $manage = $getRepoDetails->getUserRepositories(\OpenAdmin\Admin\Facades\Admin::user()->github_token);
 //
-//        $products = Products::where('status','active')->get();
+        $products = Products::where('status','active')->get();
 //
-////        return $content
-////            ->title(__('Xelenic Cloud'))
-////            ->description('Hi '. auth()->user()->name)
-////            ->view('backend.dashboard.dashboard',[
-////                'product_list' => $products
-////            ]);
+        return $content
+            ->title(__('Xelenic Cloud'))
+            ->description('Hi '. auth()->user()->name)
+            ->view('backend.dashboard.dashboard',[
+                'product_list' => $products
+            ]);
 //
 //        return $content
 //            ->title(__('Xelenic Cloud'))

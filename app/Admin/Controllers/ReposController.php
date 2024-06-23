@@ -71,6 +71,7 @@ class ReposController extends AdminController
             $actions->disableDelete();
             $actions->disableView();
             $actions->add(new RepoDetailsAction());
+//            $actions->row('<a href="" class="btn btn-sm btn-info">Details</a>');
         });
 
         return $grid;
