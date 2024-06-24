@@ -53,4 +53,5 @@ Route::get('auth/github', [\App\Http\Controllers\GitHubController::class, 'redir
 // GitHub callback route
 Route::get('auth/github/callback', [\App\Http\Controllers\GitHubController::class, 'handleGitHubCallback']);
 
+Route::get('product-t', [\App\Http\Controllers\SshController::class, 'product']);
 

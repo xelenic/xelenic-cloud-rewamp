@@ -26,4 +26,15 @@ class SshController extends Controller
         return response()->json(['output' => $output]);
     }
 
+    public function product()
+    {
+        $array = [
+            'name' => 'Product 1',
+            'price' => 100,
+            'description' => 'This is a product description',
+            'sku'=> '443'
+        ];
+        return response()->json($array);
+    }
+
 }

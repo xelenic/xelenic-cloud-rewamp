@@ -1,21 +1,155 @@
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{url('vendor/modals/bootstrap.css')}}">
 
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="max-width: -webkit-fill-available;width: 1280px;">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Modal Header</h4>
-            </div>
-            <div class="modal-body">
-                This is a basic Bootstrap 3.4 modal example.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+            <div class="modal-body" style="margin-left: 70px; margin-right: 70px;">
+                <h3 style="padding-bottom: 10px;">Create Cloud Server</h3>
+                <p>Cloud box are virtual machines that anyone can setup in seconds. You can use cloud server, either standalone or as part of a larger, cloud based infrastructure.</p>
+
+                <div>
+                    <h4 style="padding-top: 10px;">Repositories</h4>
+                    <input type="text" class="form-control" value="{{$repoDetails->name}}">
+                </div>
+
+
+                <div style="height: 10px;"></div>
+                <h4 style="padding-top: 10px;">Choose Region</h4>
+
+
+
+                <div class="row" style="background: #f5faff;padding: 20px;padding-bottom: 10px;border-radius: 15px;">
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <input type="radio" name="country" id="ukraine" style="display: none">
+                                <label for="ukraine" class="d-flex align-items-center" style="margin-bottom: 0px;">
+                                    <div class="mr-2" style="background: url('https://flagcdn.com/w80/us.png');height: 20px;width: 30px;background-repeat: no-repeat;background-size: contain;margin-right: 10px;"></div>
+                                    <h5 class="mb-0" style="margin:inherit;">New York</h5>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <input type="radio" name="country" id="ukraine" style="display: none">
+                                <label for="ukraine" class="d-flex align-items-center" style="margin-bottom: 0px;">
+                                    <div class="mr-2" style="background: url('https://flagcdn.com/w80/us.png');height: 20px;width: 30px;background-repeat: no-repeat;background-size: contain;margin-right: 10px;"></div>
+                                    <h5 class="mb-0" style="margin:inherit;">San Francisco</h5>
+
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <input type="radio" name="country" id="ukraine" style="display: none">
+                                <label for="ukraine" class="d-flex align-items-center" style="margin-bottom: 0px;">
+                                    <div class="mr-2" style="background: url('https://flagcdn.com/w80/nl.png');height: 20px;width: 30px;background-repeat: no-repeat;background-size: contain;margin-right: 10px;"></div>
+                                    <h5 class="mb-0" style="margin:inherit;">Amsterdam</h5>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <input type="radio" name="country" id="ukraine" style="display: none">
+                                <label for="ukraine" class="d-flex align-items-center" style="margin-bottom: 0px;">
+                                    <div class="mr-2" style="background: url('https://flagcdn.com/w80/sg.png');height: 20px;width: 30px;background-repeat: no-repeat;background-size: contain;margin-right: 10px;"></div>
+                                    <h5 class="mb-0" style="margin:inherit;">Singapore</h5>
+
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <input type="radio" name="country" id="ukraine" style="display: none">
+                                <label for="ukraine" class="d-flex align-items-center" style="margin-bottom: 0px;">
+                                    <div class="mr-2" style="background: url('https://flagcdn.com/w80/gb.png');height: 20px;width: 30px;background-repeat: no-repeat;background-size: contain;margin-right: 10px;"></div>
+                                    <h5 class="mb-0" style="margin:inherit;">London</h5>
+
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <input type="radio" name="country" id="ukraine" style="display: none">
+                                <label for="ukraine" class="d-flex align-items-center" style="margin-bottom: 0px;">
+                                    <div class="mr-2" style="background: url('https://flagcdn.com/w80/gr.png');height: 20px;width: 30px;background-repeat: no-repeat;background-size: contain;margin-right: 10px;"></div>
+                                    <h5 class="mb-0" style="margin:inherit;">Frankfurt</h5>
+
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <input type="radio" name="country" id="ukraine" style="display: none">
+                                <label for="ukraine" class="d-flex align-items-center" style="margin-bottom: 0px;">
+                                    <div class="mr-2" style="background: url('https://flagcdn.com/w80/ca.png');height: 20px;width: 30px;background-repeat: no-repeat;background-size: contain;margin-right: 10px;"></div>
+                                    <h5 class="mb-0" style="margin:inherit;">Toronto</h5>
+
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <input type="radio" name="country" id="ukraine" style="display: none">
+                                <label for="ukraine" class="d-flex align-items-center" style="margin-bottom: 0px;">
+                                    <div class="mr-2" style="background: url('https://flagcdn.com/w80/in.png');height: 20px;width: 30px;background-repeat: no-repeat;background-size: contain;margin-right: 10px;"></div>
+                                    <h5 class="mb-0" style="margin:inherit;">Bangalore</h5>
+
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <input type="radio" name="country" id="ukraine" style="display: none">
+                                <label for="ukraine" class="d-flex align-items-center" style="margin-bottom: 0px;">
+                                    <div class="mr-2" style="background: url('https://flagcdn.com/w80/au.png');height: 20px;width: 30px;background-repeat: no-repeat;background-size: contain;margin-right: 10px;"></div>
+                                    <h5 class="mb-0" style="margin:inherit;">Sydney</h5>
+
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="height: 10px;"></div>
+
+                <div>
+                    <h4 style="padding-top: 10px;">Data Center</h4>
+                    <p>All resources created in this datacenter will be members of the same VPC network. They can communicate securely over their Private IP addresses.</p>
+                </div>
+
+
+
+
+
             </div>
         </div>
     </div>

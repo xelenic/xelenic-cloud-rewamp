@@ -24,4 +24,3 @@ Route::get('/payment/confirmation/{clientSecret}/{detailHash}', [\App\Http\Contr
 
 Route::post('/execute-command', [\App\Http\Controllers\SshController::class, 'executeCommand']);
 
-//Route::post('product', [\App\Http\Controllers\SshController::class, 'executeCommand']);
