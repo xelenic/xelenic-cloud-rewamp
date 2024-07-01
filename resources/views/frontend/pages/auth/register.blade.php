@@ -8,7 +8,12 @@
                      style="border-style: solid;border-bottom: none;border-left: none;border-top: none;border-width: 1px;border-color: #e7e7e7;">
 
                     <div style="text-align: center;margin-top: 10px;">
-                        <h1 style="font-size: 100px">Xelenic</h1>
+                        {{--                        <h1 style="font-size: 100px">Xelenic</h1>--}}
+                        <img height="100px" src="{{url('xelenic.png')}}" style="
+    width: 322px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+">
                         <h2 style="margin-bottom: 30px;font-size: 20px">Accelerate your digital transformation</h2>
                     </div>
 

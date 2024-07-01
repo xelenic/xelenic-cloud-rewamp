@@ -38,7 +38,7 @@
         @endif
     }
 
-    var url = "/admin/media?select=true&fn=setFile{{$selector}}{!!$picker_path!!}";
+    var url = "/dashboard/media?select=true&fn=setFile{{$selector}}{!!$picker_path!!}";
     var config = {
         url : url,
         modal_elm : document.querySelector('#{{$modal}}'),

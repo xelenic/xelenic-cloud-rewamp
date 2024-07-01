@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductPageController;
-use App\Http\Controllers\ResearchAndDevelopmentController;
+use App\Http\Controllers\ResearchAndDevController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,5 +53,5 @@ Route::get('auth/github', [\App\Http\Controllers\GitHubController::class, 'redir
 // GitHub callback route
 Route::get('auth/github/callback', [\App\Http\Controllers\GitHubController::class, 'handleGitHubCallback']);
 
-Route::get('product-t', [\App\Http\Controllers\SshController::class, 'product']);
+Route::get('research-and-development', [ResearchAndDevController::class, 'index']);
 
