@@ -80,8 +80,8 @@
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#" style="white-space: inherit !important;color: #797979;">
-                                <h2 style="font-size: 26px;">Multi Cloud Handler</h2>
+                            <a class="dropdown-item" href="{{url('blog')}}" style="white-space: inherit !important;color: #797979;">
+                                <h2 style="font-size: 26px;">News</h2>
                                 <p>Whether your business is early in its journey or well on its way to
                                     digital transformation, Google Cloud can help solve your toughest challenges.</p>
                             </a>

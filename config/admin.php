@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<img src="http://localhost:8000/xelenic_dark.png" style="width: 145px;">',
+    'logo' => '<img src="https://xelenic.com/xelenic_dark.png" style="width: 145px;">',
 
     /*
     |--------------------------------------------------------------------------
@@ -158,7 +158,7 @@ return [
     'upload' => [
 
         // Disk in `config/filesystem.php`.
-        'disk' => 'local',
+        'disk' => 'public',
 
         // Image and file upload path under the disk above.
         'directory' => [

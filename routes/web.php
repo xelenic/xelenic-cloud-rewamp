@@ -54,4 +54,5 @@ Route::get('auth/github', [\App\Http\Controllers\GitHubController::class, 'redir
 Route::get('auth/github/callback', [\App\Http\Controllers\GitHubController::class, 'handleGitHubCallback']);
 
 Route::get('research-and-development', [ResearchAndDevController::class, 'index']);
-
+Route::get('blog',[\App\Http\Controllers\BlogController::class,'index']);
+Route::get('blog/{slug}',[\App\Http\Controllers\BlogController::class,'show'])->name('blog.show');

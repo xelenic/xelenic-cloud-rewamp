@@ -81,6 +81,21 @@ if (! function_exists('getGithubTokens')) {
 }
 
 
+if (! function_exists('getLimitedString')) {
+    function getLimitedString($string, $limit = 160)
+    {
+        // Remove HTML tags
+        $stringWithoutHtml = strip_tags($string);
+
+        // Limit the string to the specified number of characters
+        $limitedString = mb_substr($stringWithoutHtml, 0, $limit);
+
+        return $limitedString;
+    }
+}
+
+
+
 
 
 ?>

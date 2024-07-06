@@ -12,7 +12,7 @@
 
         body {
             margin: 0;
-            background-image: linear-gradient(#3a96ff, #0f5099);
+            background-image: linear-gradient(#3a96ff, #0f5099) !important;
             font-family: monospace;
             color: white;
         }
@@ -195,10 +195,11 @@
 
     <div style="margin-top: 70px;box-sizing: content-box !important;margin-bottom: 131px;text-align: center;">
 
-        <img src="http://localhost:8000/home_page/img/redirect.png" style="
+        <img src="{{url('home_page/img/redirect.png')}}" style="
     height: 228px;
 ">
         <h1>Redirecting to Login</h1>
+        <h1 id="countdown"></h1>
 
         <h3 style="text-align: -webkit-center;">We making sure everthing is logout</h3>
         <br>
@@ -210,6 +211,23 @@
 
 
     <script>
+
+        let countdownElement = document.getElementById('countdown');
+        let seconds = 5;
+
+        function updateCountdown() {
+            if (seconds >= 0) {
+                countdownElement.textContent = seconds;
+                seconds--;
+                setTimeout(updateCountdown, 1000);
+            } else {
+                countdownElement.textContent = "Time's up!";
+            }
+        }
+
+        updateCountdown();
+
+
         setTimeout(function(){window. location="{{url('login')}}";}, 3000)
     </script>
 
