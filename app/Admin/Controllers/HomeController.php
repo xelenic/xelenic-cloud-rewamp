@@ -11,27 +11,28 @@ use OpenAdmin\Admin\Layout\Column;
 use OpenAdmin\Admin\Layout\Content;
 use OpenAdmin\Admin\Layout\Row;
 
+
+
 class HomeController extends Controller
 {
+
     public function index(Content $content)
     {
-////        $getRepoDetails = new GithubService();
-////        $manage = $getRepoDetails->getUserRepositories(\OpenAdmin\Admin\Facades\Admin::user()->github_token);
-//
+
+        if(\OpenAdmin\Admin\Facades\Admin::user()->github_toke)
+        {
+            $getRepoDetails = new GithubService();
+            $manage = $getRepoDetails->getUserRepositories(\OpenAdmin\Admin\Facades\Admin::user()->github_token);
+
+        }
+
         $products = Products::where('status','active')->get();
-//
+
         return $content
             ->title(__('Xelenic Cloud'))
             ->description('Hi '. auth()->user()->name)
             ->view('backend.dashboard.dashboard',[
                 'product_list' => $products
             ]);
-//
-//        return $content
-//            ->title(__('Xelenic Cloud'))
-//            ->description('Hi '. auth()->user()->name)
-//            ->view('backend.project_flows.index',[
-//                'product_list' => $products
-//            ]);
     }
 }

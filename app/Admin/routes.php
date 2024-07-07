@@ -29,6 +29,9 @@ Route::group([
     $router->post('repos/deploy-work-flow-update',[\App\Admin\Controllers\ReposController::class,'deployWorkFlowUpdate'])->name('deploy_work_flow_update');
 
     $router->resource('server-size-lists', \App\Admin\Controllers\ServerSizeListController::class);
+
+    $router->resource('stack-types', \App\Admin\Controllers\StackTypesController::class);
+
 });
 
 

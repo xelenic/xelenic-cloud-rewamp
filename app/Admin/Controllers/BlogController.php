@@ -76,17 +76,32 @@ class BlogController extends AdminController
         $form = new Form(new Blog());
 
         $form->text('title', __('Title'));
-        $form->textarea('content', __('Content'));
-        $form->text('seo_tags', __('Seo tags'));
-        $form->text('categories', __('Categories'));
+
+        $form->ckeditor('content', __('Content'));
+
+        $form->tags('seo_tags', __('Seo tags'));
+
+        $form->select('categories', __('Categories'))
+            ->options([
+                'blog' => 'Tech',
+                'social' => 'Social',
+                'tech' => 'Economy',
+                'release' => 'Releases',
+            ]);
+
         $form->image('feature_image', __('Feature image'))
             ->data([
                 'name' => 'feature_image',
                 'disk' => 'public',
             ])->uniqueName()->default('default.jpg');
-        $form->select('type', __('Type'))->options(['blog' => 'Blog', 'news' => 'News']);
+        $form->select('type', __('Type'))
+            ->options(['blog' => 'Blog', 'news' => 'News']);
+
         $form->hidden('user_id', __('User id'))->value(auth()->id());
         $form->text('slug', __('Slug'));
+        $form->saving(function (Form $form) {
+            $form->slug = \Str::slug($form->title);
+        });
 
         return $form;
     }

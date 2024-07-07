@@ -7,7 +7,6 @@
 @elseif ($errors = session()->get('errors'))
     @if ($errors->hasBag('error'))
       <div class="alert alert-danger alert-dismissable">
-
         <button type="button" class="close" data-bs-dismiss="alert" aria-hidden="true">×</button>
         @foreach($errors->getBag("error")->toArray() as $message)
             <p>{!!  \Illuminate\Support\Arr::get($message, 0) !!}</p>

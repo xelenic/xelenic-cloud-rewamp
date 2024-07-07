@@ -2,14 +2,7 @@
 
 @section('content')
 
-    <div style="background: url('{{url('storage/'.$blog->feature_image)}}');height: 310px;background-position: center;background-size: cover;background-repeat: no-repeat;">
-
-    </div>
-
-
-
-
-
+    @section('title', $blog->title.' | Xelenic Cloud')
 
     <div class="container"><br>
         <nav aria-label="breadcrumb">
@@ -25,7 +18,7 @@
                     <div class="card-body">
                         <h2 style="text-align: center">{{$blog->title}}</h2>
                         <br>
-                        <div style="font-size: 20px">{{$blog->content}}</div>
+                        <div style="font-size: 20px">{!! $blog->content !!}</div>
                     </div>
                 </div>
             </div>

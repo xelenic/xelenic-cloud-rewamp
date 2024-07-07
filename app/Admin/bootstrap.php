@@ -25,6 +25,12 @@ OpenAdmin\Admin\Form::forget(['editor']);
 
 Admin::navbar(function (\OpenAdmin\Admin\Widgets\Navbar $navbar) {
 
+//    $navbar->left('<a href="'.route('home').'" class="btn btn-primary" style="padding-top: 15px;">Home</a>');
+//    $navbar->left('<a href="'.route('home').'" class="btn btn-primary" style="padding-top: 15px;">Repositories</a>');
+//    $navbar->left('<a href="'.route('home').'" class="btn btn-primary" style="padding-top: 15px;">Create New</a>');
+
+    $navbar->left('<a href="#" class="btn btn-primary" style="padding-top: 15px;">Deploy Project</a>');
+
     $navbar->right(view('backend.components.navbar_credit_balance', ['credit' => getCreditBalance()]));
 //    $navbar->right(view('backend.components.navbar_get_update_github_permanent_token'));
     // adds ajax refresh button
