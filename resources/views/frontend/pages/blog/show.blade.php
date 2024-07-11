@@ -25,6 +25,12 @@
         h2{
             margin-bottom: 30px;
         }
+        .nav li{
+            padding-bottom: unset !important;
+        }
+        .dropdown-item h2{
+            margin-bottom: unset !important;
+        }
     </style>
 
     <div class="container"><br>
