@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    @section('meta')
-        <meta name="description" content="Xelenic Cloud">
-        <meta name="keywords" content="Xelenic Cloud">
-    @endsection
+    @stack('meta')
+
+    <meta name="description" content="Xelenic Cloud">
+    <meta name="keywords" content="Xelenic Cloud">
 
     <title>@yield('title', 'Xelenic Cloud')</title>
 

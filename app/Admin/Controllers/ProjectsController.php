@@ -32,7 +32,7 @@ class ProjectsController extends AdminController
         $grid->column('project_description', __('Project description'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
-        $grid->disableCreateButton();
+//        $grid->disableCreateButton();
 
 
         return $grid;
@@ -67,12 +67,7 @@ class ProjectsController extends AdminController
     {
         $form = new Form(new Projects());
 
-
-
-        $form->textarea('project_name', __('Project name'));
-        $form->textarea('user_id', __('User id'));
-        $form->textarea('project_description', __('Project description'));
-
+        $form->setView('backend.project.create');
         return $form;
     }
 }

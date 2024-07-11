@@ -87,24 +87,37 @@ class ProductsController extends AdminController
             $form->text('slug', __('Slug'));
             $form->switch('is_available_api', __('Is available api'));
             $form->switch('showing_frontend', __('Showing frontend'));
-            $form->select('product_type', __('Product type'))->options(config('products.product_type'));
-            $form->file('cover_photo', __('Cover photo'));
+
+        })->tab('Product Structure', function ($form) {
+
+            $form->select('product_type','Product Type')
+                ->options(config('products.product_type'))
+                ->when('do_service', function (Form $form) {
+                    $form->textarea('execute_terminal','Execute Terminal');
+                })->when('aws_service', function (Form $form) {
+                    $form->text('name','Name');
+                    $form->text('passport','Passport');
+                });
+
+
             $form->select('status', __('Status'))->options([
                 'active' => 'Active',
                 'inactive' => 'Inactive'
-            ]);
+            ])->default('active');
 
 
         })->tab('Product Information', function ($form) {
 
             $form->icon('icon', __('Icon'));
-
+            $form->file('cover_photo', __('Cover photo'));
             $form->textarea('short_description', __('Short description'));
             $form->ckeditor('description', __('Description'));
 
         })->tab('Payment and Pricing', function ($form) {
 
-            $form->decimal('price', __('Price'));
+
+
+            $form->decimal('price', __('Price per hours'))->default(0);
             $form->select('payment_type', __('Payment type'))->options(config('products.payment_type'));
             $form->table('payment_rules', function ($table) {
                 $table->text('key_type');

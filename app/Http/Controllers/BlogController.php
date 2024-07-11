@@ -23,8 +23,10 @@ class BlogController extends Controller
     public function show($slug)
     {
         $blog = Blog::where('slug', $slug)->first();
+        $blogPosts = Blog::orderBy('created_at', 'desc')->take(5)->get();
         return view('frontend.pages.blog.show',[
-            'blog' => $blog
+            'blog' => $blog,
+            'blogPosts' => $blogPosts,
         ]);
     }
 }
