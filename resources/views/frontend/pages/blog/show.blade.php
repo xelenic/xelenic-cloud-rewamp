@@ -11,6 +11,21 @@
         <meta property="og:url" content="{{url('blog')}}" />
         <meta property="og:type" content="{{$blog->content}}" />
     @endpush
+    <style>
+        img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        li{
+            font-size: 16px;
+            padding-bottom: 20px;
+        }
+        h2{
+            margin-bottom: 30px;
+        }
+    </style>
 
     <div class="container"><br>
 
@@ -41,11 +56,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8">
-                
-                <h2 style="text-align: center">{{$blog->title}}</h2>
-                <br>
+            <div class="col-md-8" style="border-style: solid;border-width: 1px;border-color: #afc8e5;padding: 30px;">
+                <div style="height:240px;padding-top: 100px;background: url('{{url('storage/'.$blog->feature_image)}}');text-align: center;background-position: center;background-repeat: no-repeat;background-size: cover;color: white;margin-bottom: 60px;">
+                  <div style="background: #000000a6;padding-top: 10px;padding-bottom: 10px;">
+                      <h2 style="text-align: center">{{$blog->title}}</h2>
+                  </div>
+
+
+                </div>
+
                 <div style="font-size: 20px">{!! $blog->content !!}</div>
+
             </div>
         </div>
     </div>
