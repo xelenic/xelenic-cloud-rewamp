@@ -68,39 +68,53 @@
                     <div class="col-md-6" style="border-style: solid;border-bottom: none;border-right: none;border-top: none;border-width: 1px;border-color: #e7e7e7;">
                         <li>
                             <a class="dropdown-item" href="https://forum.xelenic.com/" style="white-space: inherit !important;color: #797979;">
-                                <h2 style="font-size: 26px;">Community</h2>
-                                <p>Connect, learn, and innovate with Xelenic Cloud enthusiasts. Your go-to hub for all things cloud</p>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <i class="icon-users" style="font-size: 60px;"></i>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <h2 style="font-size: 16px;">Community</h2>
+                                        <p style="white-space: pre-line;overflow: hidden;text-overflow: revert-layer;height: 50px;">Whether your business is early in its journey or well on its way to digital transformation, Google Cloud can help solve your
+                                            toughest challenges</p>
+                                    </div>
+                                </div>
                             </a>
                         </li>
+
+
                         <li>
                             <a class="dropdown-item" href="{{url('research-and-development')}}" style="white-space: inherit !important;color: #797979;">
-                                <h2 style="font-size: 26px;">Research and Development</h2>
-                                <p>Whether your business is early in its journey or well on its way to
-                                    digital transformation, Google Cloud can help solve your toughest challenges.</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{url('blog')}}" style="white-space: inherit !important;color: #797979;">
-                                <h2 style="font-size: 26px;">News</h2>
-                                <p>Whether your business is early in its journey or well on its way to
-                                    digital transformation, Google Cloud can help solve your toughest challenges.</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#" style="white-space: inherit !important;color: #797979;">
-                                <h2 style="font-size: 26px;">High Secure Cloud</h2>
-                                <p>Whether your business is early in its journey or well on its way to
-                                    digital transformation, Google Cloud can help solve your toughest challenges.</p>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <i class="icon-search" style="font-size: 60px;"></i>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <h2 style="font-size: 16px;">Research and Development</h2>
+                                        <p style="white-space: pre-line;overflow: hidden;text-overflow: revert-layer;height: 50px;">Whether your business is early in its journey or well on its way to digital transformation, Google Cloud can help solve your
+                                            toughest challenges</p>
+                                    </div>
+                                </div>
                             </a>
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="#" style="white-space: inherit !important;color: #797979;">
-                                <h2 style="font-size: 26px;">Student Packages</h2>
-                                <p>Whether your business is early in its journey or well on its way to
-                                    digital transformation, Google Cloud can help solve your toughest challenges.</p>
+                            <a class="dropdown-item" href="{{url('blog')}}" style="white-space: inherit !important;color: #797979;">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <i class="icon-newspaper" style="font-size: 60px;"></i>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <h2 style="font-size: 16px;">News</h2>
+                                        <p style="white-space: pre-line;overflow: hidden;text-overflow: revert-layer;height: 50px;">Whether your business is
+                                            early in its journey or well on its way to digital transformation, Google Cloud can help solve your
+                                            toughest challenges</p>
+                                    </div>
+                                </div>
                             </a>
                         </li>
+
+
+
                     </div>
                 </div>
             </div>
