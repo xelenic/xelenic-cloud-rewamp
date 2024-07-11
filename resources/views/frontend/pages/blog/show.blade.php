@@ -65,7 +65,7 @@
             <div class="col-md-8" style="border-style: solid;border-width: 1px;border-color: #afc8e5;padding: 30px;">
                 <div style="height:240px;padding-top: 100px;background: url('{{url('storage/'.$blog->feature_image)}}');text-align: center;background-position: center;background-repeat: no-repeat;background-size: cover;color: white;margin-bottom: 60px;">
                   <div style="background: #000000a6;padding-top: 10px;padding-bottom: 10px;">
-                      <h2 style="text-align: center">{{$blog->title}}</h2>
+                      <h1 style="text-align: center;font-size: 28px">{{$blog->title}}</h1>
                   </div>
 
 
