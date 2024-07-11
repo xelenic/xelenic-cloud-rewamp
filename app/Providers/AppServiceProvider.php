@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\Products\ProductService\ProductService;
 use Illuminate\Support\ServiceProvider;
 use App\Services\Payment\StripeService;
 
@@ -16,6 +17,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(StripeService::class, function ($app) {
             return new StripeService();
         });
+
+
+
+
     }
 
     /**
@@ -23,6 +28,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-
+        foreach (config('landing.menus.landing') as $item)
+        {
+            if($item['title'] == 'Products')
+            {
+                config(['landing.menus.landing.items' => ProductService::getFeatureProductMenu()]);
+            }
+        }
     }
 }
