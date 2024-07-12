@@ -6,7 +6,9 @@
 
 
 
+    @push('push_head_script')
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    @endpush
 
     @if(count($sliders) > 0)
         <div class="container">
