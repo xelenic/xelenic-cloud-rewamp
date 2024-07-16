@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div style="background: white;margin-top: 40px;height: 600px;padding: 30px;">
-            <div class="row" style="padding-top: 0px;">
+            <div class="row" style="padding-top: 0px;background: url('{{url('dashboard_res/indash.png')}}')">
                 <div class="col-md-6"
                      style="border-style: solid;border-bottom: none;border-left: none;border-top: none;border-width: 1px;border-color: #e7e7e7;">
 

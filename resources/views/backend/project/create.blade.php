@@ -12,8 +12,9 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <form action="" method="POST">
-                            @csrf
+                        <form action="{{admin_url('project/create/action-create')}}" method="POST">
+                            {{csrf_field()}}
+
                             <div class="form-group">
                                 <label>Project Name</label><br>
                                 <small>Choose a unique name for your project. This name will help you identify and manage your project easily.</small>
