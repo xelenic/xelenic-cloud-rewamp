@@ -18,9 +18,11 @@ Route::group([
 
     $router->resource('product-categories', \App\Admin\Controllers\ProductCategoryController::class);
 
+
     $router->resource('projects', \App\Admin\Controllers\ProjectsController::class);
     $router->post('project/create/action-create',[\App\Admin\Controllers\ProjectsController::class,'custom_store'])->name('project_create_action_base');
-    $router->get('projects/add-bucket-server/{id}', [\App\Admin\Controllers\ProjectsController::class,'addBucketServer'])->name('addBucketServer');
+
+    $router->get('project/{id}/{page}', [\App\Admin\Controllers\ProjectsController::class,'viewData'])->name('addBucketServer');
 
     $router->resource('payment-histories', \App\Admin\Controllers\PaymentHistoryController::class);
     $router->resource('server-religions', \App\Admin\Controllers\ServerReligionController::class);

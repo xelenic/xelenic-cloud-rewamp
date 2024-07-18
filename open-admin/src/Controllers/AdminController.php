@@ -60,14 +60,7 @@ class AdminController extends Controller
             ->body($grid);
     }
 
-    /**
-     * Show interface.
-     *
-     * @param mixed   $id
-     * @param Content $content
-     *
-     * @return Content
-     */
+
     public function show($id, Content $content)
     {
         $detail = $this->detail($id);

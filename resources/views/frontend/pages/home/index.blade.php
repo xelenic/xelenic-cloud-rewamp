@@ -8,9 +8,8 @@
     'features'=>[
         [
             'title'=>'Serverless Architecture',
-            'description'=>'Experience the freedom of running applications without the
-            hassle of managing servers. Focus on your code while we handle the infrastructure
-             for you.',
+            'description'=>'Experience the freedom of running applications without the hassle of
+            managing servers. Focus on your code while we handle the infrastructure for you.',
             'icon'=> url('home_page/img/icons/link.png'),
             'link' => 'http://www.google.com'
         ],
@@ -52,13 +51,6 @@
 
 
 
-
-
-
-
-
-
-
     <section id="about" class="about" style="
     padding-top: 70px;
     background: white;
@@ -74,7 +66,7 @@
                     <img src="https://bootstrapmade.com/demo/templates/eNno/assets/img/about.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content" style="margin-top: 70px;text-align: left;padding-left: 40px;">
-                    <h3>Voluptatem dignissimos provident quasi corporis voluptates</h3>
+                    <h3>Voluptatem dignissimos tessssstttt quasi corporis voluptates</h3>
                     <p class="fst-italic" style="
     background: #3a96ff;
     color: white;
