@@ -40,7 +40,7 @@
             <div class="row aos-init aos-animate" data-aos="zoom-out">
                 <div class="col-lg-9 text-center text-lg-start">
                     <h3>Call To Action</h3>
-                    <p style="color: white;"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p style="color: white;"> Test Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
                 <div class="col-lg-3 cta-btn-container text-center">
                     <a class="btn btn-primary" href="#" style="font-size: 21px;margin-top: 30px;background: #b57809;border-color: #b57809;">Call To Action</a>
