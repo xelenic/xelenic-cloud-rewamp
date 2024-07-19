@@ -56,10 +56,13 @@ class ProjectsController extends AdminController
      * Make a show builder.
      *
      */
-    protected function detail($id)
+    protected function detail($id,$page = null)
     {
         $newProject = Projects::find($id);
-        return view('backend.project.project_playground', ['projectDetails' => $newProject]);
+        return view('backend.project.project_playground', [
+            'projectDetails' => $newProject,
+            'page' => $page
+        ]);
     }
 
     /**
@@ -71,7 +74,8 @@ class ProjectsController extends AdminController
      */
     public function viewData($id, $page, Content $contentr)
     {
-        $detail = $this->detail($id);
+
+        $detail = $this->detail($id,$page);
         if ($this->hasHooks('alterDetail')) {
             $detail = $this->callHooks('alterDetail', $detail);
         }
