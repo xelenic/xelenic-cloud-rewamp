@@ -196,7 +196,7 @@
     }
 </style>
 
-<footer class="site-footer mt-4">
+<footer class="site-footer">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6">
