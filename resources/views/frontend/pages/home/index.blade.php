@@ -2,6 +2,7 @@
 
 @section('content')
 
+    @include('frontend.pages.home.home_styles.home_styles')
     @include('frontend.pages.home.components.hero')
 
     <!-- About Start -->
@@ -37,9 +38,11 @@
             <div class="row g-4 justify-content-center text-center mb-5">
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="text-center p-4">
-                        <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-envelope fa-5x text-secondary"></i></div>
+                        <div class="d-inline-block rounded bg-light p-4 mb-4">
+                            <i class="icon-envelope" style="font-size: 50px;"></i>
+                        </div>
                         <div class="feature-content">
-                            <a href="#" class="h4">Email Marketing <i class="fa fa-long-arrow-alt-right"></i></a>
+                            <a href="#" class="h4">Email Marketing <i class="icon-long-arrow-alt-right"></i></a>
                             <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
                             </p>
                         </div>
@@ -47,9 +50,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="text-center p-4">
-                        <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-mail-bulk fa-5x text-secondary"></i></div>
+                        <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="icon-mail-bulk" style="font-size: 50px;"></i></div>
                         <div class="feature-content">
-                            <a href="#" class="h4">Email Builder <i class="fa fa-long-arrow-alt-right"></i></a>
+                            <a href="#" class="h4">Email Builder <i class="icon-long-arrow-alt-right"></i></a>
                             <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
                             </p>
                         </div>
@@ -57,9 +60,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="text-center rounded p-4">
-                        <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-sitemap fa-5x text-secondary"></i></div>
+                        <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="icon-sitemap" style="font-size: 50px;"></i></div>
                         <div class="feature-content">
-                            <a href="#" class="h4">Customer Builder <i class="fa fa-long-arrow-alt-right"></i></a>
+                            <a href="#" class="h4">Customer Builder <i class="icon-long-arrow-alt-right"></i></a>
                             <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
                             </p>
                         </div>
@@ -67,9 +70,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="text-center rounded p-4">
-                        <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-tasks fa-5x text-secondary"></i></div>
+                        <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="icon-tasks" style="font-size: 50px;"></i></div>
                         <div class="feature-content">
-                            <a href="#" class="h4">Campaign Manager <i class="fa fa-long-arrow-alt-right"></i></a>
+                            <a href="#" class="h4">Campaign Manager <i class="icon-long-arrow-alt-right"></i></a>
                             <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
                             </p>
                         </div>
@@ -166,16 +169,16 @@
                             </div>
                         </div>
                         <div class="text-start p-5">
-                            <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
-                            <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
-                            <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
-                            <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
+                            <p><i class="icon-check text-success"></i> Limited Acess Library</p>
+                            <p><i class="icon-check text-success"></i> Customer Support</p>
+                            <p><i class="icon-check text-success"></i> Pre-built Email Templates</p>
+                            <p><i class="icon-check text-success"></i> Reporting & Analytics</p>
+                            <p><i class="icon-check text-success"></i> Forms & Landing Pages</p>
+                            <p><i class="icon-check text-success"></i> A/B Testing</p>
+                            <p><i class="icon-check text-success"></i> Email Scheduling</p>
+                            <p><i class="icon-check text-success"></i> Automated Customer Journeys</p>
+                            <p><i class="icon-times text-danger me-1"></i> Creative Assistant</p>
+                            <p class="mb-4"><i class="icon-times text-danger me-1"></i> Role-based Access</p>
                             <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
                         </div>
                     </div>
@@ -191,16 +194,16 @@
                             </div>
                         </div>
                         <div class="text-start p-5">
-                            <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
-                            <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
-                            <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
-                            <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
+                            <p><i class="icon-check text-success"></i> Limited Acess Library</p>
+                            <p><i class="icon-check text-success"></i> Customer Support</p>
+                            <p><i class="icon-check text-success"></i> Pre-built Email Templates</p>
+                            <p><i class="icon-check text-success"></i> Reporting & Analytics</p>
+                            <p><i class="icon-check text-success"></i> Forms & Landing Pages</p>
+                            <p><i class="icon-check text-success"></i> A/B Testing</p>
+                            <p><i class="icon-check text-success"></i> Email Scheduling</p>
+                            <p><i class="icon-check text-success"></i> Automated Customer Journeys</p>
+                            <p><i class="icon-times text-danger me-1"></i> Creative Assistant</p>
+                            <p class="mb-4"><i class="icon-times text-danger me-1"></i> Role-based Access</p>
                             <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
                         </div>
                     </div>
@@ -215,16 +218,16 @@
                             </div>
                         </div>
                         <div class="text-start p-5">
-                            <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
-                            <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
-                            <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
-                            <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
-                            <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
+                            <p><i class="icon-check text-success"></i> Limited Acess Library</p>
+                            <p><i class="icon-check text-success"></i> Customer Support</p>
+                            <p><i class="icon-check text-success"></i> Pre-built Email Templates</p>
+                            <p><i class="icon-check text-success"></i> Reporting & Analytics</p>
+                            <p><i class="icon-check text-success"></i> Forms & Landing Pages</p>
+                            <p><i class="icon-check text-success"></i> A/B Testing</p>
+                            <p><i class="icon-check text-success"></i> Email Scheduling</p>
+                            <p><i class="icon-check text-success"></i> Automated Customer Journeys</p>
+                            <p><i class="icon-times fas fa-times text-danger me-1"></i> Creative Assistant</p>
+                            <p class="mb-4"><i class="icon-times fas fa-times text-danger me-1"></i>Role-based Access</p>
                             <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
                         </div>
                     </div>
@@ -253,7 +256,7 @@
                                 <span><i class="fa fa-clock"></i> Dec 01.2024</span>
                                 <div class="d-flex">
                                     <span class="me-3"> 3 <i class="fa fa-heart"></i></span>
-                                    <a href="#" class="text-white">0 <i class="fa fa-comment"></i></a>
+                                    <a href="#" class="text-white">0 <i class="icon-comment"></i></a>
                                 </div>
                             </div>
                         </div>

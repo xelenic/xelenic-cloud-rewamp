@@ -1,7 +1,6 @@
 <!-- styles.blade.php -->
 <link rel="preconnect" href="https://fonts.bunny.net">
 <link href="{{ url('vendor/open-admin/open-admin.min.css?id=70b9c0f02db63754c914a2300f687107') }}" rel="stylesheet">
-<link href="{{ url('home_page/style.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="/frontend/assets/css/styles.css">
 <!-- Libraries Stylesheet -->
 <link href="/home_page/lib/animate/animate.min.css" rel="stylesheet">
