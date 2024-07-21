@@ -24,6 +24,9 @@ Route::group([
 
     $router->get('project/{id}/{page}', [\App\Admin\Controllers\ProjectsController::class,'viewData'])->name('addBucketServer');
 
+
+
+
     $router->resource('payment-histories', \App\Admin\Controllers\PaymentHistoryController::class);
     $router->resource('server-religions', \App\Admin\Controllers\ServerReligionController::class);
     $router->resource('blogs', \App\Admin\Controllers\BlogController::class);

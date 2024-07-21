@@ -56,13 +56,11 @@ class ProjectsController extends AdminController
      * Make a show builder.
      *
      */
-    protected function detail($id,$page = null)
+    protected function detail($id,$page = null, $params = [])
     {
-        $newProject = Projects::find($id);
-        return view('backend.project.project_playground', [
-            'projectDetails' => $newProject,
-            'page' => $page
-        ]);
+        $params['projectDetails'] = Projects::find($id);
+        $params['page'] = $page;
+        return view('backend.project.project_playground', $params);
     }
 
     /**
