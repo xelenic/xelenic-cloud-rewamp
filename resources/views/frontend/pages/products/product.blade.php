@@ -2,7 +2,7 @@
 
 @section('content')
     <div>
-        <div style="background: #6586b7;color: white;height: 179px;margin-top: 50px;">
+        <div style="background: #6586b7;color: white;height: 179px;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-2">
@@ -33,8 +33,8 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <a class="btn btn-primary">Create Free Account</a>
-                        <a class="btn btn-secondary">Get started with {{$productDetails->product_name}}</a>
+                        <a class="btn">Create Free Account</a>
+                        <a class="btn btn-outline-primary">Get started with {{$productDetails->product_name}}</a>
                     </div>
                     <div class="card-body">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">

@@ -1,160 +1,96 @@
-<!-- nav.blade.php -->
-<header class="custom-navbar navbar navbar-light bg-white p-0 align-items-stretch" style="
-    top: 0px;
-">
-    <a class="navbar-brand menu-width container-md bg-semi-dark text-center" href="http://localhost:8000/dashboard">
 
-        <img src="{{url('xelenic_dark.png')}}" style="width: 145px;">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-2">
+        <a class="navbar-brand" href="/">
+            <img src="{{url('xelenic_dark.png')}}" style="width: 145px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown dropdown-mega position-static">
+                    <a class="nav-link" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">Products</a>
+                    <div class="dropdown-menu shadow">
+                        <div class="mega-content px-4">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12 col-sm-4 col-md-6 py-4">
+                                        <h4>Accelerate your digital transformation</h4>
+                                        <p>Whether your business is early in its journey or well on its way to digital transformation, Google Cloud can help solve your toughest challenges.</p>
+                                    </div>
+                                    <div class="col-12 col-sm-4 col-md-6 py-4">
+                                        <h5>Try Now</h5>
+                                        <div class="list-group">
+                                            @foreach($frontend_enabled_product_list as $product)
+                                                <div>
+                                                    <a class="dropdown-item" href="{{url('products/'.$product->slug)}}" style="white-space: inherit !important;color: #797979;">
+                                                        <div class="row">
+                                                            <div class="col-md-2">
+                                                                <i class="{{$product->icon}}" style="font-size: 60px;"></i>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <h2 style="font-size: 16px;">{{$product->product_name}}</h2>
+                                                                <p style="white-space: pre-line;overflow: hidden;text-overflow: revert-layer;height: 50px;">{{$product->short_description}}</p>
+                                                            </div>
+                                                            <i class="icon-times"></i>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
 
-{{--        <span class="short"><b>Xe</b></span><span class="long"><b>Xelenic</b> Cloud</span>--}}
-    </a>
-    <div class="d-flex flex-fill flex-wrap header-items">
-
-        <ul class="nav navbar-nav hidden-sm visible-lg-block">
-            <a style="color: white;font-style: normal;text-decoration: unset;" href="{{route('home')}}">Home</a>
-        </ul>
-
-        @if($frontend_enabled_product_list->count() > 0)
-            <ul class="nav navbar-nav hidden-sm visible-lg-block" id="products" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                <button style="background-color: rgba(0, 0, 255, 0); border: none; color: white; ">Products</button>
-            </ul>
-            <ul class="dropdown-menu dropdown-menu-hover" aria-labelledby="products">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div style="padding: 20px;margin-top: 10%;margin-bottom: 20%;">
-                                <h2 style="margin-bottom: 30px;font-size: 30px">Accelerate your digital transformation</h2>
-                                <p style="font-size: 20px">Whether your business is early in its journey or well on its way to digital transformation,
-                                    Google Cloud can help solve your toughest challenges.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6" style="border-style: solid;border-bottom: none;border-right: none;border-top: none;border-width: 1px;border-color: #e7e7e7;">
-
-                            @foreach($frontend_enabled_product_list as $product)
-                                <li>
-                                    <a class="dropdown-item" href="{{url('products/'.$product->slug)}}" style="white-space: inherit !important;color: #797979;">
-                                        <div class="row">
-                                            <div class="col-md-2">
-                                                <i class="{{$product->icon}}" style="font-size: 60px;"></i>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <h2 style="font-size: 16px;">{{$product->product_name}}</h2>
-                                                <p style="white-space: pre-line;overflow: hidden;text-overflow: revert-layer;height: 50px;">{{$product->short_description}}</p>
+                    </div>
+                </li>
+                <li class="nav-item dropdown dropdown-mega position-static">
+                    <a class="nav-link" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">Support Center</a>
+                    <div class="dropdown-menu shadow">
+                        <div class="mega-content px-4">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12 col-sm-4 col-md-3 py-4">
+                                        <h5>Pages</h5>
+                                        <div class="list-group">
+                                            <a class="list-group-item" href="#">Accomodations</a>
+                                            <a class="list-group-item" href="#">Terms & Conditions</a>
+                                            <a class="list-group-item" href="#">Privacy</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-4 col-md-3 py-4">
+                                        <h5>Card</h5>
+                                        <div class="card">
+                                            <img src="/frontend/assets/img/banner-image.jpg" class="img-fluid" alt="image">
+                                            <div class="card-body">
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                             </div>
                                         </div>
-                                    </a>
-                                </li>
-                            @endforeach
-
-                        </div>
-                    </div>
-                </div>
-            </ul>
-        @endif
-
-
-        <ul class="nav navbar-nav hidden-sm visible-lg-block" id="support" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-            Support Center
-        </ul>
-        <ul class="dropdown-menu dropdown-menu-hover" aria-labelledby="support">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div style="padding: 20px;margin-top: 10%;margin-bottom: 20%;">
-                            <h2 style="margin-bottom: 30px;font-size: 30px">Accelerate your digital transformation</h2>
-                            <p style="font-size: 20px">Whether your business is early in its journey or well on its way to digital transformation,
-                                Google Cloud can help solve your toughest challenges.</p></div>
-                    </div>
-                    <div class="col-md-6" style="border-style: solid;border-bottom: none;border-right: none;border-top: none;border-width: 1px;border-color: #e7e7e7;">
-                        <li>
-                            <a class="dropdown-item" href="https://forum.xelenic.com/" style="white-space: inherit !important;color: #797979;">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <i class="icon-users" style="font-size: 60px;"></i>
                                     </div>
-                                    <div class="col-md-10">
-                                        <h2 style="font-size: 16px;">Community</h2>
-                                        <p style="white-space: pre-line;overflow: hidden;text-overflow: revert-layer;height: 50px;">Whether your business is early in its journey or well on its way to digital transformation, Google Cloud can help solve your
-                                            toughest challenges</p>
+                                    <div class="col-12 col-sm-4 col-md-3 py-4">
+                                        <h5>About CodeHim</h5>
+                                        <p><b>CodeHim</b> is one of the BEST developer websites that provide web designers and developers with a simple way to preview and download a variety of free code & scripts.</p>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-3 py-4">
+                                        <h5>Damn, so many</h5>
+                                        <div class="list-group">
+                                            <a class="list-group-item" href="#">Accomodations</a>
+                                            <a class="list-group-item" href="#">Terms & Conditions</a>
+                                            <a class="list-group-item" href="#">Privacy</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </a>
-                        </li>
-
-
-                        <li>
-                            <a class="dropdown-item" href="{{url('research-and-development')}}" style="white-space: inherit !important;color: #797979;">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <i class="icon-search" style="font-size: 60px;"></i>
-                                    </div>
-                                    <div class="col-md-10">
-                                        <h2 style="font-size: 16px;">Research and Development</h2>
-                                        <p style="white-space: pre-line;overflow: hidden;text-overflow: revert-layer;height: 50px;">Whether your business is early in its journey or well on its way to digital transformation, Google Cloud can help solve your
-                                            toughest challenges</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item" href="{{url('blog')}}" style="white-space: inherit !important;color: #797979;">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <i class="icon-newspaper" style="font-size: 60px;"></i>
-                                    </div>
-                                    <div class="col-md-10">
-                                        <h2 style="font-size: 16px;">News</h2>
-                                        <p style="white-space: pre-line;overflow: hidden;text-overflow: revert-layer;height: 50px;">Whether your business is
-                                            early in its journey or well on its way to digital transformation, Google Cloud can help solve your
-                                            toughest challenges</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-
-
-                    </div>
-                </div>
-            </div>
-        </ul>
-
-
-        @if(auth()->check() == false)
-            @if(Admin::user())
-                <ul class="nav ms-auto d-flex align-items-center">
-                    <li class="nav-item">
-                        <a href="{{url('dashboard')}}" style="text-decoration:unset !important;color: white">
-                            <div class="user-menu d-flex align-items-center px-3" href="#">
-                                <span class="bg-light inline rounded-circle user-image"><img src="{{url('vendor/open-admin/open-admin/gfx/user.svg')}}" alt="User Image"></span>
-                                <span class="hidden-xs">{{Admin::user()->name}}</span>
                             </div>
-                        </a>
-                    </li>
-                </ul>
-            @else
-                <ul class="nav navbar-nav hidden-sm visible-lg-block">
-                    <a class="btn btn-dark" href="{{route('register')}}" style="height: 34px;margin-top: 11px;background: #7218a1;border: #00a65a;">Get Started</a>
-                </ul>
-            @endif
-
-        @else
-            <ul class="nav order-2 ms-auto d-flex align-items-center">
-                <li class="nav-item">
-                    <a href="sjkdhakjsdhas" style="text-decoration: unset !important;">
-                        <div class="user-menu d-flex align-items-center px-3" href="#">
-                        <span class="bg-light inline rounded-circle user-image">
-                            <img src="{{url('vendor/open-admin/open-admin/gfx/user.svg')}}" alt="User Image">
-                        </span>
-                            <span class="hidden-xs">{{Admin::user()->name}}</span>
                         </div>
-                    </a>
+                    </div>
                 </li>
+
             </ul>
-        @endif
-
-    </div>
+        </div>
+    </nav>
 </header>
-
-
