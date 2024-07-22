@@ -25,43 +25,37 @@ class ProjectsController extends AdminController
     /**
      * Make a grid builder.
      *
-     * @return Grid
      */
-    protected function grid()
+    protected function grid(Content $content)
     {
-        $grid = new Grid(new Projects());
+        $detail = $this->projectList();
+        if ($this->hasHooks('alterDetail')) {
+            $detail = $this->callHooks('alterDetail', $detail);
+        }
 
-        $grid->column('id', __('Id'));
-        $grid->column('project_name', __('Project name'));
-        $grid->column('user_id', __('User id'));
-        $grid->column('project_description', __('Project description'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
-        $grid->actions(function ($actions) {
-            $actions->disableView();
-            $actions->disableEdit();
-            $actions->disableDelete();
-            //add html a href link to view project
-            $actions->add(new ViewProjectAction($actions->row));
-
-//            $actions->('<a href="/dashboard/projects/'.$actions->row->id.'">View</a>');
-        });
-//        $grid->disableCreateButton();
-
-
-        return $grid;
+        return $content
+            ->title($this->title())
+            ->description($this->description['show'] ?? trans('admin.show'))
+            ->body($detail);
     }
 
-    /**
-     * Make a show builder.
-     *
-     */
+
     protected function detail($id,$page = null, $params = [])
     {
         $params['projectDetails'] = Projects::find($id);
         $params['page'] = $page;
         return view('backend.project.project_playground', $params);
     }
+
+    public function projectList($params = [])
+    {
+        $params['projects'] = Projects::all();
+        return view('backend.project.project_list', $params);
+    }
+
+
+
+
 
     /**
      * Make a detail builder.
@@ -83,6 +77,27 @@ class ProjectsController extends AdminController
             ->description($this->description['show'] ?? trans('admin.show'))
             ->body($detail);
     }
+
+
+    public function projectListView(Content $contentr)
+    {
+
+        $detail = $this->projectList();
+        if ($this->hasHooks('alterDetail')) {
+            $detail = $this->callHooks('alterDetail', $detail);
+        }
+
+        return $contentr
+            ->title($this->title())
+            ->description($this->description['show'] ?? trans('admin.show'))
+            ->body($detail);
+    }
+
+
+
+
+
+
 
 
     public function addBucketServer($id, Content $content)

@@ -35,5 +35,9 @@ Admin::navbar(function (\OpenAdmin\Admin\Widgets\Navbar $navbar) {
 //    $navbar->right(view('backend.components.navbar_get_update_github_permanent_token'));
     // adds ajax refresh button
     $navbar->right(new OpenAdmin\Admin\Widgets\Navbar\RefreshButton());
+
 });
+
+
+//Admin::headerJs('');
 

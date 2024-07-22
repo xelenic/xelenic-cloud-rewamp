@@ -19,9 +19,13 @@ Route::group([
     $router->resource('product-categories', \App\Admin\Controllers\ProductCategoryController::class);
 
 
-    $router->resource('projects', \App\Admin\Controllers\ProjectsController::class);
-    $router->post('project/create/action-create',[\App\Admin\Controllers\ProjectsController::class,'custom_store'])->name('project_create_action_base');
 
+    $router->get('projects', [\App\Admin\Controllers\ProjectsController::class,'projectListView'])->name('project_list');
+
+
+
+
+    $router->post('project/create/action-create',[\App\Admin\Controllers\ProjectsController::class,'custom_store'])->name('project_create_action_base');
     $router->get('project/{id}/{page}', [\App\Admin\Controllers\ProjectsController::class,'viewData'])->name('addBucketServer');
 
 
