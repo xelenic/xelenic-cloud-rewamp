@@ -2,7 +2,7 @@
 <header class="custom-navbar navbar navbar-light bg-white p-0 align-items-stretch" style="
     top: 0px;
 ">
-    <a class="navbar-brand menu-width container-md bg-semi-dark text-center" href="{{route('home')}}">
+    <a class="navbar-brand menu-width container-md bg-semi-dark text-center" href="{{url('/')}}">
 
         <img src="{{url('xelenic_dark.png')}}" style="width: 145px;">
 
@@ -11,7 +11,7 @@
     <div class="d-flex flex-fill flex-wrap header-items">
 
         <ul class="nav navbar-nav hidden-sm visible-lg-block">
-            <a style="color: white;font-style: normal;text-decoration: unset;" href="{{route('home')}}">Home</a>
+            <a style="color: white;font-style: normal;text-decoration: unset;" href="{{url('/')}}">Home</a>
         </ul>
 
         @if($frontend_enabled_product_list->count() > 0)
